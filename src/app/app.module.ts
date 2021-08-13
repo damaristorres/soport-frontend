@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { MercaderiaModule } from './@core/domain/mercaderia/mercaderia.module';
+import { DepositoModule } from './@core/domain/deposito/deposito.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { MercaderiaModule } from './@core/domain/mercaderia/mercaderia.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MercaderiaModule
+    MercaderiaModule,
+    DepositoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
