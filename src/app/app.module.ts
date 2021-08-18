@@ -6,16 +6,20 @@ import { AppComponent } from './app.component';
 
 import { MercaderiaModule } from './@core/domain/mercaderia/mercaderia.module';
 import { DepositoModule } from './@core/domain/deposito/deposito.module';
+import { EstantesModule } from './@core/domain/estantes/estantes.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MercaderiaModule,
-    DepositoModule
+    DepositoModule,
+    EstantesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

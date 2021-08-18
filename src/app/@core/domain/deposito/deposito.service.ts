@@ -12,8 +12,12 @@ interface ApiResponse{
   providedIn: 'root'
 })
 export class DepositoService {
+
   private baseUrl: string = `${environment.URL_API}/api/v1/deposito`;
-  constructor(private http:HttpClient) { }
+
+  constructor(
+    private http:HttpClient
+    ) { }
 
   // Todos los depositos
   getDepositos(): Observable<Deposito[]>{
