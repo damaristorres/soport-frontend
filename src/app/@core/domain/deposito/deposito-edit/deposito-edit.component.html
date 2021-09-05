@@ -1,0 +1,57 @@
+<div class="grid">
+  <div class="col">
+    <div class="row grid justify-content-center ml-2">
+      <p-button
+        icon="pi pi-arrow-left"
+        label="Volver"
+        [routerLink]="['/deposito']"
+      ></p-button>
+      <button
+        pButton
+        class="p-button-info ml-2"
+        icon="pi pi-save"
+        label="Guardar"
+        (click)="handleSubmit()"
+      ></button>
+    </div>
+    <div class="row grid justify-content-center">
+      <form [formGroup]="miFormulario">
+        <div class="col">
+          <div class="row mt-3">
+            <span class="p-float-label">
+              <input
+                class="p-inputtext-lg"
+                type="text"
+                pInputText
+                [disabled]="true"
+                [value]="depositoId"
+              />
+              <label>ID</label>
+            </span>
+          </div>
+          <div class="row mt-3">
+            <span class="p-float-label">
+              <input
+                class="p-inputtext-lg"
+                formControlName="nombre"
+                type="text"
+                pInputText
+              />
+              <label>Nombre</label>
+              <small *ngIf="campoInvalido('nombre')" class="p-error block"
+                >Requerido: máximo 50 caracteres</small
+              >
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<h3>Form</h3>
+<pre>{{ miFormulario.value | json }}</pre>
+<h3>Deposito</h3>
+<pre>{{ deposito | json }}</pre>
+<h3>
+  Valid: <small>{{ miFormulario.valid }}</small>
+</h3>

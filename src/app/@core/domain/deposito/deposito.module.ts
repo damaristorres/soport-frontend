@@ -2,18 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DepositoRoutingModule } from './deposito-routing.module';
-import { MercaderiaListComponent } from './mercaderia-list/mercaderia-list.component';
-import { MercaderiaEditComponent } from './mercaderia-edit/mercaderia-edit.component';
-
+import { DepositoListComponent } from './deposito-list/deposito-list.component';
+import { DepositoEditComponent } from './deposito-edit/deposito-edit.component';
+import { PrimeNgModule } from 'src/app/shared/prime-ng/prime-ng.module';
+import { StatusPipe } from 'src/app/shared/pipes/status.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    MercaderiaListComponent,
-    MercaderiaEditComponent
-  ],
   imports: [
     CommonModule,
-    DepositoRoutingModule
-  ]
+    DepositoRoutingModule,
+    PrimeNgModule,
+    ReactiveFormsModule,
+  ],
+  declarations: [DepositoListComponent, DepositoEditComponent, StatusPipe],
 })
-export class DepositoModule { }
+export class DepositoModule {}
