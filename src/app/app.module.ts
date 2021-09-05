@@ -14,6 +14,9 @@ import { ToastModule } from 'primeng/toast';
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { PrimeNgModule } from './@core/shared/prime-ng/prime-ng.module';
+import { MenubarModule } from 'primeng/menubar';
+import { CardModule } from 'primeng/card';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -24,9 +27,12 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     DepositoModule,
     EstantesModule,
     BrowserAnimationsModule,
+    PrimeNgModule,
     ToastModule,
     MessageModule,
     MessagesModule,
+    MenubarModule,
+    CardModule,
   ],
   bootstrap: [AppComponent],
   providers: [MessageService, ConfirmationService],

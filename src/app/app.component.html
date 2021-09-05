@@ -1,2 +1,13 @@
-<router-outlet></router-outlet>
-<p-toast></p-toast>
+<p-toast> </p-toast>
+<p-menubar [model]="menuItems">
+  <p-button
+    (click)="themeService.setTheme(!themeService.darkMode)"
+    [icon]="themeService.darkMode ? 'pi pi-sun' : 'pi pi-moon'"
+    [label]="'Tema ' + (themeService.darkMode ? 'Claro' : 'Oscuro')"
+  ></p-button>
+</p-menubar>
+<div class="mt-5">
+  <p-card>
+    <router-outlet></router-outlet>
+  </p-card>
+</div>

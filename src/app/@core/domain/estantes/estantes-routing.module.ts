@@ -8,8 +8,8 @@ const routes: Routes = [
     path: '',
     children: [
       { path: '', component: EstantesListComponent },
-      { path: 'nuevo', component: EstantesEditComponent },
-      { path: ':id', component: EstantesEditComponent },
+      { path: 'form', component: EstantesEditComponent },
+      { path: 'form/:id', component: EstantesEditComponent },
     ],
   },
   { path: '**', redirectTo: '' },

@@ -12,6 +12,9 @@
 <p-table
   styleClass="p-datatable-striped"
   [value]="depositos"
+  [paginator]="true"
+  [rows]="5"
+  [showCurrentPageReport]="true"
   responsiveLayout="scroll"
 >
   <ng-template pTemplate="header">

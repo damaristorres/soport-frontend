@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+import { MenubarItemsService } from './@core/shared/services/menubar-items.service';
+import { ThemeService } from './@core/shared/services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor() {}
-  title = 'scsp-frontend';
+  menuItems: MenuItem[] = this.menuItemsService.items;
+  constructor(
+    private menuItemsService: MenubarItemsService,
+    public themeService: ThemeService
+  ) {
+    this.themeService.setTheme(this.themeService.darkMode);
+  }
 }

@@ -42,7 +42,7 @@ export class DepositoEditComponent implements OnInit {
           this.miFormulario.reset(deposito);
         },
         error: () => {
-          this.router.navigate(['/deposito/form']);
+          this.router.navigate(['/depositos/form']);
         },
       });
   }
@@ -92,7 +92,7 @@ export class DepositoEditComponent implements OnInit {
             summary: 'Sistema',
             detail: 'Registro insertado',
           });
-          this.router.navigate(['/deposito', 'form', res.data.id]);
+          this.router.navigate(['/depositos', 'form', res.data.id]);
         },
         error: (e) => {
           this.messageService.add({

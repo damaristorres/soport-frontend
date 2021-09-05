@@ -4,7 +4,7 @@
       <p-button
         icon="pi pi-arrow-left"
         label="Volver"
-        [routerLink]="['/deposito']"
+        [routerLink]="['/depositos']"
       ></p-button>
       <button
         pButton
@@ -48,10 +48,3 @@
     </div>
   </div>
 </div>
-<h3>Form</h3>
-<pre>{{ miFormulario.value | json }}</pre>
-<h3>Deposito</h3>
-<pre>{{ deposito | json }}</pre>
-<h3>
-  Valid: <small>{{ miFormulario.valid }}</small>
-</h3>

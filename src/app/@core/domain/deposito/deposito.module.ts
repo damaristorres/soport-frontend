@@ -4,17 +4,17 @@ import { CommonModule } from '@angular/common';
 import { DepositoRoutingModule } from './deposito-routing.module';
 import { DepositoListComponent } from './deposito-list/deposito-list.component';
 import { DepositoEditComponent } from './deposito-edit/deposito-edit.component';
-import { PrimeNgModule } from 'src/app/shared/prime-ng/prime-ng.module';
-import { StatusPipe } from 'src/app/shared/pipes/status.pipe';
+import { PrimeNgModule } from 'src/app/@core/shared/prime-ng/prime-ng.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     DepositoRoutingModule,
-    PrimeNgModule,
+    SharedModule,
     ReactiveFormsModule,
   ],
-  declarations: [DepositoListComponent, DepositoEditComponent, StatusPipe],
+  declarations: [DepositoListComponent, DepositoEditComponent],
 })
 export class DepositoModule {}

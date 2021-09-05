@@ -3,14 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'depositos',
+    loadChildren: async () =>
+      (await import('./@core/domain/deposito/deposito.module')).DepositoModule,
+  },
+  {
     path: 'estantes',
     loadChildren: async () =>
       (await import('./@core/domain/estantes/estantes.module')).EstantesModule,
   },
   {
-    path: 'deposito',
+    path: 'mercaderias',
     loadChildren: async () =>
-      (await import('./@core/domain/deposito/deposito.module')).DepositoModule,
+      (await import('./@core/domain/mercaderia/mercaderia.module'))
+        .MercaderiaModule,
   },
   { path: '**', redirectTo: '' },
 ];

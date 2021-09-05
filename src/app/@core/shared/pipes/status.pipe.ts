@@ -7,10 +7,10 @@ import { Status } from 'src/app/@core/domain/enums/status.enums';
 export class StatusPipe implements PipeTransform {
   transform(value: Status): string {
     switch (value) {
-      case 'I':
-        return 'Inactivo';
-      case 'A':
-        return 'Activo';
+      case Status.INACTIVA:
+        return 'Inactiva';
+      case Status.ACTIVA:
+        return 'Activa';
       default:
         return 'null';
     }
