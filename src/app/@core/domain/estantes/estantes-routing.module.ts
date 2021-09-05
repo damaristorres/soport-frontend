@@ -4,14 +4,19 @@ import { EstantesEditComponent } from './estantes-edit/estantes-edit.component';
 import { EstantesListComponent } from './estantes-list/estantes-list.component';
 
 const routes: Routes = [
-//   { path: '', component: EstantesListComponent },
-//   { path: 'nuevo', component: EstantesEditComponent },
-//   { path: ':id', component: EstantesEditComponent }
-]
-
+  {
+    path: '',
+    children: [
+      { path: '', component: EstantesListComponent },
+      { path: 'nuevo', component: EstantesEditComponent },
+      { path: ':id', component: EstantesEditComponent },
+    ],
+  },
+  { path: '**', redirectTo: '' },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class EstantesRoutingModule { }
+export class EstantesRoutingModule {}

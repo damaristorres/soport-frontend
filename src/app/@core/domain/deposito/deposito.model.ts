@@ -1,12 +1,4 @@
-export class Deposito{
-    id!: number;
-    nombre!: string;
-    status!: Status;
+export interface Deposito {
+  id: number;
+  nombre: string;
 }
-
-
-enum Status {
-    ACTIVO = 'A',
-    INACTIVO = 'I',
-}
-  

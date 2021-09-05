@@ -6,34 +6,27 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
 export class EstantesService {
-  
   private url = `${environment.URL_API}/estantes/`;
 
-  deposito: Deposito;
+  deposito!: Deposito;
   estantes: Estantes;
 
-  constructor(
-    private http: HttpClient
-
-  ) {
-
-  this.deposito = new Deposito();
-  this.estantes = new Estantes();
-
+  constructor(private http: HttpClient) {
+    this.estantes = new Estantes();
   }
   //Todos los estantes
-  getAll(){
+  getAll() {
     return this.http.get<Estantes[]>(this.url);
   }
 
   //Se obtiene por id de Deposito
-  getByIdDeposito(depositoId: number){
-    return this.http.get<Estantes[]>(this.url + '/api/v1/deposito/' + depositoId);
+  getByIdDeposito(depositoId: number) {
+    return this.http.get<Estantes[]>(
+      this.url + '/api/v1/deposito/' + depositoId
+    );
   }
 
   //Se obtiene por id
@@ -47,9 +40,10 @@ export class EstantesService {
   }
 
   //Modificar
-  update(id: number, estantes: Estantes): Observable<Estantes | HttpErrorResponse> { 
+  update(
+    id: number,
+    estantes: Estantes
+  ): Observable<Estantes | HttpErrorResponse> {
     return this.http.put<Estantes>(this.url + estantes.id, estantes);
   }
-
-
 }

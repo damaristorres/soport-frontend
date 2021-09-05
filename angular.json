@@ -25,12 +25,29 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              {
+                "input": "src/themes/light.scss",
+                "bundleName": "light",
+                "inject": false
+              },
+              {
+                "input": "src/themes/dark.scss",
+                "bundleName": "dark",
+                "inject": false
+              },
+              {
+                "input": "src/primeflex.scss",
+                "bundleName": "primeflex",
+                "inject": false
+              },
+              {
+                "input": "src/prime-icons.scss",
+                "bundleName": "prime-icons",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -92,13 +109,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         }

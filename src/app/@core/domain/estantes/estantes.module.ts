@@ -1,20 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EstantesEditComponent } from './estantes-edit/estantes-edit.component';
-import { EstantesListComponent } from './estantes-list/estantes-list.component';
 import { DepositoService } from '../deposito/deposito.service';
-
-
+import { EstantesRoutingModule } from './estantes-routing.module';
 
 @NgModule({
-  declarations: [
-    
-  ],
-  imports: [
-    CommonModule
-  ], 
-  providers:[
-    DepositoService
-  ]
+  declarations: [],
+  imports: [CommonModule, EstantesRoutingModule],
+  providers: [DepositoService],
 })
-export class EstantesModule { }
+export class EstantesModule {}
