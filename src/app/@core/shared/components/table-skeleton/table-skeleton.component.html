@@ -2,15 +2,11 @@
   <ng-template pTemplate="header">
     <tr>
       <th *ngFor="let header of headers">{{ header }}</th>
-      <th>&nbsp;</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body">
     <tr *ngFor="let row of rows">
       <td *ngFor="let header of headers">
-        <p-skeleton></p-skeleton>
-      </td>
-      <td>
         <p-skeleton></p-skeleton>
       </td>
     </tr>

@@ -19,10 +19,8 @@ export class DepositoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.depositoService.getDepositos().subscribe((depositos) => {
-      setTimeout(() => {
-        this.depositos = depositos;
-        this.dataLoading = false;
-      }, 2500);
+      this.depositos = depositos;
+      this.dataLoading = false;
     });
   }
 

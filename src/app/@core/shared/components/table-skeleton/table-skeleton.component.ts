@@ -12,6 +12,7 @@ export class TableSkeletonComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.headers.push('');
     for (let i = 0; i < this.columnCount; i++) {
       this.rows.push(null);
     }
