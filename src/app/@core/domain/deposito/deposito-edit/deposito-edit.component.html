@@ -40,12 +40,7 @@
             [ngClass]="{ 'p-input-icon-right': loading }"
             class="p-float-label"
           >
-            <input
-              formControlName="nombre"
-              [disabled]="loading"
-              type="text"
-              pInputText
-            />
+            <input formControlName="nombre" type="text" pInputText />
             <label>Nombre</label>
             <i *ngIf="loading" class="pi pi-spin pi-spinner"></i>
             <small *ngIf="campoInvalido('nombre')" class="p-error block"

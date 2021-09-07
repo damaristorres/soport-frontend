@@ -34,11 +34,10 @@ export class DepositoEditComponent implements OnInit {
       .pipe(
         switchMap(({ id }) => {
           this.depositoId = id ? id : 0;
-          return this.depositoService.getDeposito(id);
-        }),
-        tap((_) => {
+          if (!id) throw new Error();
           this.miFormulario.disable();
           this.loading = true;
+          return this.depositoService.getDeposito(id);
         })
       )
       .subscribe({
@@ -50,6 +49,8 @@ export class DepositoEditComponent implements OnInit {
         },
         error: () => {
           this.router.navigate(['/depositos/form']);
+          this.loading = false;
+          this.miFormulario.enable();
         },
       });
   }
