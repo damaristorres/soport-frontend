@@ -10,6 +10,7 @@ import { DepositoService } from '../deposito.service';
 })
 export class DepositoListComponent implements OnInit {
   depositos!: Deposito[];
+  dataLoading: boolean = true;
   constructor(
     private depositoService: DepositoService,
     private confirmationService: ConfirmationService,
@@ -18,7 +19,10 @@ export class DepositoListComponent implements OnInit {
 
   ngOnInit(): void {
     this.depositoService.getDepositos().subscribe((depositos) => {
-      this.depositos = depositos;
+      setTimeout(() => {
+        this.depositos = depositos;
+        this.dataLoading = false;
+      }, 2500);
     });
   }
 
@@ -28,6 +32,12 @@ export class DepositoListComponent implements OnInit {
       accept: () => {
         this.onDelete(id);
       },
+      acceptLabel: 'Sí',
+      header: 'Sistema',
+      icon: 'pi pi-exclamation-triangle',
+      message:
+        '¿Seguro que desea borrar el registro? Esta acción no se puede deshacer.',
+      defaultFocus: 'none',
     });
   }
 

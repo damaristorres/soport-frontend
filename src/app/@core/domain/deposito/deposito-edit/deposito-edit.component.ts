@@ -12,6 +12,7 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./deposito-edit.component.css'],
 })
 export class DepositoEditComponent implements OnInit {
+  loading: boolean = false;
   depositoId!: number;
   deposito: Deposito = {
     id: 0,
@@ -34,12 +35,18 @@ export class DepositoEditComponent implements OnInit {
         switchMap(({ id }) => {
           this.depositoId = id ? id : 0;
           return this.depositoService.getDeposito(id);
+        }),
+        tap((_) => {
+          this.miFormulario.disable();
+          this.loading = true;
         })
       )
       .subscribe({
         next: (deposito) => {
           this.deposito = deposito;
           this.miFormulario.reset(deposito);
+          this.miFormulario.enable();
+          this.loading = false;
         },
         error: () => {
           this.router.navigate(['/depositos/form']);
@@ -55,6 +62,10 @@ export class DepositoEditComponent implements OnInit {
   }
 
   handleSubmit() {
+    if (this.miFormulario.invalid) {
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
     if (this.depositoId) this.actualizar();
     else this.insertar();
   }

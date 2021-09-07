@@ -27,7 +27,11 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "src/styles/styles.scss",
+              {
+                "input": "node_modules/primeng/resources/primeng.min.css",
+                "bundleName": "primeng",
+                "inject": false
+              },
               {
                 "input": "src/themes/light.scss",
                 "bundleName": "light",
@@ -46,6 +50,11 @@
               {
                 "input": "src/styles/prime-icons.scss",
                 "bundleName": "prime-icons",
+                "inject": false
+              },
+              {
+                "input": "src/styles/styles.scss",
+                "bundleName": "styles",
                 "inject": false
               }
             ],
