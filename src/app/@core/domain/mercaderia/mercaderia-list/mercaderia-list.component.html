@@ -1,1 +1,6 @@
 <p>mercaderia-list works!</p>
+<button [disabled]="loading" (click)="syncMercaderias()">sync</button>
+<div *ngIf="loading">
+    <p>Sincronizando mercaderias Dolphin... {{syncProgress}} de {{totalMercDolphin}}</p>
+    <p>Errores: {{syncErrors.length}}</p>
+</div>
