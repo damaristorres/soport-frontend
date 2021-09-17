@@ -14,7 +14,7 @@ interface ApiResponse {
   providedIn: 'root',
 })
 export class DepositoService {
-  private baseUrl: string = `${environment.URL_API}/api/v1/deposito`;
+  private baseUrl: string = `${environment.URL_API}/deposito`;
 
   constructor(private http: HttpClient) {}
 

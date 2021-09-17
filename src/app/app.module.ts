@@ -28,4 +28,4 @@ import { SharedModule } from './@core/shared/shared.module';
   bootstrap: [AppComponent],
   providers: [MessageService, ConfirmationService],
 })
-export class AppModule {}
+export class AppModule { }
