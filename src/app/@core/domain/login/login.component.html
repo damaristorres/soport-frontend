@@ -1,0 +1,28 @@
+<div id="main">
+        <div class="card text-center">
+            <h1>Login</h1>
+        </div>
+
+        <div class="p-card-content">
+            <div class="p-fluid ng-star-inserted">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input id="username" type="text" placeholder="Usuario" (blur)="user.login = getValue($event)" (keyup.enter)="focusPassword()"
+                        required="" pInputText class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
+                    </div>
+
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                         <input id="password" type="password" placeholder="Contraseña" (blur)="user.password = getValue($event)" (keyup.enter)="focusBtnEnter()"
+                        required="" pPassword class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
+                    </div>
+
+                    <div class="p-card-footer">
+                        <button pButton id="btnEnter" type="submit" label="Iniciar Sesión" class="p-button-primary" (click)="login()"></button>
+                        <button pButton type="submit" label="Registrarse" class="p-button-outlined p-button-sm"
+                        routerLink= '/register'></button>
+                    </div>
+            </div>
+        </div>
+</div>
+<p-toast></p-toast>

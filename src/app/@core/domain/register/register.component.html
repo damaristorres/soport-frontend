@@ -1,0 +1,42 @@
+<div id="main">
+    <div class="card text-center">
+        <h1>Register</h1>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="enviarRegistro($event)">
+        <div class="p-card-content">
+            <div class="p-fluid ng-star-inserted">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input id="nombre" type="text" placeholder="Nombre" [pTooltip]="formError.nombre" tooltipEvent="focus" 
+                        formControlName="nombre" required="" pInputText 
+                        class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
+                    </div>
+
+                    <div class="p-inputgroup">
+                        <span id="input2" class="p-inputgroup-addon">@</span>
+                        <input id="login" type="text" placeholder="Username" [pTooltip]="formError.login" tooltipEvent="focus" 
+                        formControlName="login" required="" pinputtext="" 
+                        class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
+                    </div>
+
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                        <input id="password" type="password" placeholder="Contraseña" [pTooltip]="formError.password" tooltipEvent="focus" 
+                        formControlName="password" required="" pinputtext="" class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
+                    </div>
+
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                        <input id="newPassword" type="password" placeholder="Repetir contraseña" [pTooltip]="formError.passwordRepetido"
+                        required="" pinputtext="" class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched"
+                        tooltipEvent="focus" formControlName="passwordRepetido">
+                    </div>
+
+                    <div class="p-card-footer">
+                        <button pButton pRipple type="submit" label="Registrar" class="p-button-primary" 
+                        (click)="enviarRegistro($event)"></button>
+                    </div>
+            </div>
+        </div>
+    </form>
+</div>

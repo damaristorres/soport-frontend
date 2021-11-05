@@ -1,0 +1,11 @@
+#panelExterno{
+    width: 400px;
+    height: 500px;
+
+}
+#panelInterno{
+    width: 600px;
+    height: 350px;
+    margin-left: 5%;
+    margin-right: 5%;
+}

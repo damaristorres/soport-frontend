@@ -4,4 +4,8 @@
     [icon]="themeService.darkMode ? 'pi pi-sun' : 'pi pi-moon'"
     [label]="'Tema ' + (themeService.darkMode ? 'Claro' : 'Oscuro')"
   ></p-button>
+
+  <button style="margin-left: 8px;" pButton icon="pi pi-cog" routerLink= '/setting'></button>  
+  <button style="margin-left: 8px;" pButton label="Salir" icon="pi pi-sign-out" (click)="salir()"></button>
+
 </p-menubar>

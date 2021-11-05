@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
 import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
 import { TableSkeletonComponent } from './components/table-skeleton/table-skeleton.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
-  imports: [PrimeNgModule, CommonModule],
+  imports: [PrimeNgModule, CommonModule, TooltipModule],
   exports: [PrimeNgModule, MenuBarComponent, TableSkeletonComponent],
   declarations: [MenuBarComponent, TableSkeletonComponent],
 })

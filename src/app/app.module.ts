@@ -12,12 +12,36 @@ import { DepositoModule } from './@core/domain/deposito/deposito.module';
 import { EstantesModule } from './@core/domain/estantes/estantes.module';
 import { MercaderiaModule } from './@core/domain/mercaderia/mercaderia.module';
 import { SharedModule } from './@core/shared/shared.module';
+import { LoginComponent } from './@core/domain/login/login.component';
+import { RegisterComponent } from './@core/domain/register/register.component';
+import { DashboardComponent } from './@core/domain/dashboard/dashboard.component';
+import { SettingComponent } from './@core/domain/setting/setting.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import {PasswordModule} from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { InputTextModule } from 'primeng/inputtext';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, DashboardComponent, SettingComponent],
   imports: [
     BrowserAnimationsModule,
+    CommonModule,
+    ButtonModule,
+    CardModule,
+    ToastModule,
+    BrowserAnimationsModule,
+    SelectButtonModule,
+    PasswordModule,
     BrowserModule,
+    FormsModule,
+    InputTextModule,
+    TooltipModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     DepositoModule,

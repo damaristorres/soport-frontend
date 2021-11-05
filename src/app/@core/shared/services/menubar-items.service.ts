@@ -9,17 +9,17 @@ export class MenubarItemsService {
     {
       label: 'Depositos',
       icon: 'pi pi-inbox',
-      routerLink: ['/depositos'],
+      routerLink: ['depositos'],
     },
     {
       label: 'Estantes',
       icon: 'pi pi-inbox',
-      routerLink: ['/estantes'],
+      routerLink: ['estantes'],
     },
     {
       label: 'Mercaderias',
       icon: 'pi pi-inbox',
-      routerLink: ['/mercaderias'],
+      routerLink: ['mercaderias'],
     },
   ];
 }
