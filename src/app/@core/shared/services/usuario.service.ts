@@ -10,7 +10,7 @@ import { User } from '../../domain/usuario/usuario.model';
 export class UsuariosService extends GenericService<User>{
 
   constructor(private readonly httpClient:HttpClient) {
-    super("user",httpClient);
+    super("user", httpClient);
   }
 
    url= 'http://localhost:3000/api/v1'

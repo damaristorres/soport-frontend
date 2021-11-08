@@ -8,21 +8,21 @@
                     <div class="p-inputgroup">
                         <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
                         <input id="nombre" type="text" placeholder="Nombre" [pTooltip]="formError.nombre" tooltipEvent="focus" 
-                        formControlName="nombre" required="" pInputText 
+                        formControlName="nombre" pInputText 
                         class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
                     </div>
 
                     <div class="p-inputgroup">
                         <span id="input2" class="p-inputgroup-addon">@</span>
                         <input id="login" type="text" placeholder="Username" [pTooltip]="formError.login" tooltipEvent="focus" 
-                        formControlName="login" required="" pinputtext="" 
+                        formControlName="login" pinputtext="" 
                         class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
                     </div>
 
                     <div class="p-inputgroup">
                         <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
                         <input id="password" type="password" placeholder="Contraseña" [pTooltip]="formError.password" tooltipEvent="focus" 
-                        formControlName="password" required="" pinputtext="" class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
+                        formControlName="password" pinputtext="" class="p-inputtext p-component p-element ng-pristine ng-invalid ng-touched">
                     </div>
 
                     <div class="p-inputgroup">
@@ -33,8 +33,7 @@
                     </div>
 
                     <div class="p-card-footer">
-                        <button pButton pRipple type="submit" label="Registrar" class="p-button-primary" 
-                        (click)="enviarRegistro($event)"></button>
+                        <button pButton pRipple type="submit" label="Registrar" class="p-button-primary"></button>
                     </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
 <div id="panelExterno">
+    <p-menu [model]="items">
+    </p-menu>
     <div id="panelInterno">
-         <div *ngIf="displayCambiarContrasena"></div>
+        <div *ngIf="displayCambiarContrasena"><app-change-password></app-change-password></div>
     </div>
 </div>

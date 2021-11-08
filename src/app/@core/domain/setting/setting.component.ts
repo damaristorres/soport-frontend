@@ -10,7 +10,6 @@ export class SettingComponent implements OnInit {
 
   items: MenuItem[]=[];
   displayCambiarContrasena:boolean=false;
-  displayTiposServicio:boolean=false;
 
   constructor() {
   }
@@ -18,12 +17,28 @@ export class SettingComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Cuenta',
+        label: 'Configuraciones',
         items:[
           {
             label: 'Cambiar contraseña',
             icon: 'fas fa-key',
             command:() => this.displayPage("change-password")
+          },
+        ] 
+      },
+      {
+        items:[
+          {
+            label: 'Opción 2',
+            icon: 'fas fa-key',
+          },
+        ] 
+      },
+      {
+        items:[
+          {
+            label: 'Opción 3',
+            icon: 'fas fa-key',
           },
         ] 
       },

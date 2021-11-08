@@ -17,7 +17,11 @@ export class ChangePasswordComponent implements OnInit {
     new_password:''
   }
 
-  constructor(private userService:UsuariosService, private validatoForm:ValidatorService, private auth:AuthService) { 
+  constructor(
+    private userService:UsuariosService, 
+    private validatoForm:ValidatorService, 
+    private auth:AuthService
+  ) { 
     this.formCambiar = new FormGroup({});
   }
 
