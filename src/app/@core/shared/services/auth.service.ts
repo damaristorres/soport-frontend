@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {environment } from '../../../../environments/environment';
-import { User } from '../../domain/usuario/usuario.model';
+import { Usuario } from '../../domain/usuario/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +12,14 @@ export class AuthService {
 
   api = environment.URL_API;
 
-  user!: User;
+  user!: Usuario;
 
   constructor(
     private httpClient: HttpClient,
     private router: Router
   ) { }
 
-  async login(user: User){
+  async login(user: Usuario){
     this.user = user;
     return await this.httpClient.post(this.api+"/login" , user).toPromise().then(result => this.storage(result));
   }
@@ -35,7 +35,7 @@ export class AuthService {
     return localStorage.getItem('access_token');
   }
 
-  setLogin(user: User){
+  setLogin(user: Usuario){
     localStorage.setItem('login',user.login);
   }
 

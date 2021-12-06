@@ -19,13 +19,21 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { MenuModule} from 'primeng/menu';
+import { DialogModule } from 'primeng/dialog';
 import {PasswordModule} from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ChangePasswordComponent } from './@core/domain/setting/change-password/change-password.component';
 import { InterceptorService } from './@core/shared/services/interceptor.service';
+import { NuevoUsuarioComponent } from './@core/domain/nuevo-usuario/nuevo-usuario.component';
+import { AuthService } from './@core/shared/services/auth.service';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -34,7 +42,8 @@ import { InterceptorService } from './@core/shared/services/interceptor.service'
     RegisterComponent, 
     DashboardComponent, 
     SettingComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    NuevoUsuarioComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -48,6 +57,9 @@ import { InterceptorService } from './@core/shared/services/interceptor.service'
     BrowserModule,
     FormsModule,
     InputTextModule,
+    InputTextareaModule,
+    InputNumberModule,
+    OverlayPanelModule,
     TooltipModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -56,10 +68,13 @@ import { InterceptorService } from './@core/shared/services/interceptor.service'
     EstantesModule,
     MercaderiaModule,
     SharedModule,
-    MenuModule
+    MenuModule,
+    TableModule,
+    PaginatorModule,
+    DialogModule,
   ],
   bootstrap: [AppComponent],
-  providers: [MessageService, ConfirmationService,
+  providers: [MessageService, ConfirmationService, AuthService,
     { provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true }

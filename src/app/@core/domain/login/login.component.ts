@@ -3,7 +3,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { AuthService } from '../../shared/services/auth.service';
-import { User } from '../usuario/usuario.model';
+import { Usuario } from '../usuario/usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { User } from '../usuario/usuario.model';
 })
 export class LoginComponent implements OnInit {
 
-  user: User = new User();
+  user: Usuario = new Usuario();
 
   display:boolean = false;
 

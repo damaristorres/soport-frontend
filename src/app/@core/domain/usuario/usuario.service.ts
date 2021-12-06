@@ -1,39 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Usuario } from './usuario.model';
+import { ChangeUser } from '../../domain/usuario/changeUser.model';
+import { Usuario } from '../../domain/usuario/usuario.model';
+import { GenericService } from '../../shared/services/generic.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
 
-  api = "http://localhost:3000/api/v1/";
+export class UsuariosService extends GenericService<Usuario>{
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
-
-  getUsuarios(){
-    return this.httpClient.get<Usuario[]>(this.api);
+  constructor(private readonly httpClient:HttpClient) {
+    super("user", httpClient);
   }
 
-  getUsuarioById(username: string){
-    return this.httpClient.get<Usuario>(this.api + username);
-  }
-  
-  addUsuario(usuario: Usuario){
-    return this.httpClient.post<Usuario>(this.api, usuario);
+   url= 'http://localhost:3000/api/v1'
+
+  async changePassword(user:ChangeUser){
+    return await this.httpClient.post(this.url+"/user/changePassword", user).toPromise();
   }
 
-  updateUsuario(usuario: Usuario){
-    return this.httpClient.put<Usuario>(this.api + usuario.login, usuario);
-  }
-
-  updatePerfil(usuario: Usuario){
-    return this.httpClient.put<Usuario>(this.api + 'perfil/' + usuario.login, usuario);
-  }
-
-  deleteEmpresa(username: string){
-    return this.httpClient.delete(this.api + username);
+  async getUserByLogin(login:string){
+    return await this.httpClient.post(this.url+"/user/verifyUser",{login:login}).toPromise();
   }
 }

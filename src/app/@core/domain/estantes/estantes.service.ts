@@ -29,6 +29,10 @@ export class EstantesService {
     );
   }
 
+  getByIdEstantes(estantesId: number){
+    return this.http.get<Estantes[]>(this.url + 'estantes/' + estantesId);
+  }
+
   //Se obtiene por id
   getById(id: any) {
     return this.http.get<Estantes>(this.url + id);
@@ -40,10 +44,12 @@ export class EstantesService {
   }
 
   //Modificar
-  update(
-    id: number,
-    estantes: Estantes
-  ): Observable<Estantes | HttpErrorResponse> {
+  update(estantes: Estantes) {
     return this.http.put<Estantes>(this.url + estantes.id, estantes);
   }
+
+  delete(id: any) {
+    return this.http.delete(this.url + id);
+  }
+
 }

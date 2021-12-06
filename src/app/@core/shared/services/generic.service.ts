@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { Params } from '@angular/router';
 
 
 export class GenericService<Model>{
@@ -27,4 +28,15 @@ export class GenericService<Model>{
     return await this._httpClient.delete(this.url+"/"+this.dir+"/"+id).toPromise();
   }
 
+  async getUserByLogin(login:string){
+    return await this._httpClient.post(this.url+"/usuarios/verifyUser",{login:login}).toPromise();
+  }
+  
+  async getPerFilter(params?:Params){
+    return await this._httpClient.get<Array<Model>>(this.url+"/"+this.dir+"/getPerFilter", {params: params}).toPromise();
+  }
+  
+  async countRepository(params?:Params){
+    return await this._httpClient.get<number>(this.url+"/"+this.dir+"/count", {params: params}).toPromise();
+  }
 }

@@ -7,6 +7,7 @@ import { LoginComponent } from './@core/domain/login/login.component';
 import { RegisterComponent } from './@core/domain/register/register.component';
 import { AppModule } from './app.module';
 import { SettingComponent } from './@core/domain/setting/setting.component';
+import { UsuarioComponent } from './@core/domain/usuario/usuario-list/usuario.component';
 
 const routes: Routes = [
 
@@ -15,7 +16,7 @@ const routes: Routes = [
 
   { path: '', component: DashboardComponent, canActivate:[AuthGuard]},
   { path: 'setting', component: SettingComponent, canActivate:[AuthGuard]},
-
+  { path: 'usuarios', component: UsuarioComponent, canActivate:[AuthGuard]},
 
   { path: 'depositos', loadChildren: async () =>
       (await import('./@core/domain/deposito/deposito.module')).DepositoModule, canActivate:[AuthGuard],

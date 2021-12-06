@@ -7,6 +7,11 @@ import { MenuItem } from 'primeng/api';
 export class MenubarItemsService {
   items: MenuItem[] = [
     {
+      label: 'Dashboard',
+      icon: 'pi pi-home',
+      routerLink: ['dashboard'],
+    },
+    {
       label: 'Depositos',
       icon: 'pi pi-inbox',
       routerLink: ['depositos'],
@@ -21,5 +26,11 @@ export class MenubarItemsService {
       icon: 'pi pi-inbox',
       routerLink: ['mercaderias'],
     },
+    {
+      label: 'Usuarios',
+      icon: 'pi pi-user',
+      routerLink: ['usuarios'],
+    },
+
   ];
 }

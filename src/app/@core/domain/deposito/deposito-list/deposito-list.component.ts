@@ -6,7 +6,7 @@ import { DepositoService } from '../deposito.service';
 @Component({
   selector: 'app-deposito-list',
   templateUrl: './deposito-list.component.html',
-  styleUrls: ['./deposito-list.component.scss'],
+  styleUrls: ['./deposito-list.component.css'],
 })
 export class DepositoListComponent implements OnInit {
   depositos!: Deposito[];

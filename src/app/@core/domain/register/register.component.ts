@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UsuariosService } from '../../shared/services/usuario.service';
+import { AbstractControl, Form, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorService } from '../../shared/services/validator.service';
+import { TipoUser } from '../../enum/tipo_user.enum';
+import { UsuariosService } from '../usuario/usuario.service';
 
 @Component({
   selector: 'app-register',
@@ -16,13 +17,24 @@ export class RegisterComponent implements OnInit {
     nombre:'',
     login:'',
     password:'',
-    passwordRepetido:''
+    passwordRepetido:'',
+    existe:'',
   }
 
 
   constructor(private userService:UsuariosService, private validatoForm:ValidatorService) {
     this.form = new FormGroup({});
+    this.stateOptions = this.getTipoUser();
    }
+
+  getTipoUser(){
+    let tipos = Object.values(TipoUser);
+    let userOptions = new Array();
+    for(let T of tipos){
+        userOptions.push({name: T, value: T})
+      }
+    return userOptions;
+  }
 
   ngOnInit(): void {
     this.buildForm();
@@ -34,6 +46,7 @@ export class RegisterComponent implements OnInit {
       login: new FormControl('', [Validators.required, Validators.maxLength(10)]),
       password: new FormControl('', [Validators.required]),
       passwordRepetido: new FormControl('', [Validators.required]),
+      tipo_user: new FormControl(this.getTipoUser()[0].value,[]),
     });
   }
 
@@ -51,14 +64,12 @@ export class RegisterComponent implements OnInit {
      }
   }
 
-
   getFormErrors(){
     let result = this.validatoForm.getErrors(this.form);
     for(let v of result){
       this.formError[v.position]=v.msj;
     }
   }
-
 
   focusValidation(){
     for(let t in this.formError){
@@ -69,7 +80,6 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-
   validarPasswordRepetido(){
     if(this.form.get('password')?.value !== this.form.get('passwordRepetido')?.value 
     && this.formError.passwordRepetido == ''){
@@ -78,5 +88,17 @@ export class RegisterComponent implements OnInit {
     return false;
   }
 
+  vaciar(){
+    this.buildForm();
+  }
 
+  existe(control: AbstractControl) {
+    return this.userService.getUserByLogin(control.value).then((value) => {
+      if(value!=null){
+        return {'existe':true};
+      }else{
+        return null;
+      }
+     });
+  }
 }
