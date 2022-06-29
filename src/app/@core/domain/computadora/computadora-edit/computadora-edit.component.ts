@@ -23,6 +23,8 @@ export class ComputadoraEditComponent implements OnInit {
 
   submitted: boolean | undefined;
 
+  ruta = "/computadora";
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -56,6 +58,34 @@ export class ComputadoraEditComponent implements OnInit {
           } 
         }
       )
+  }
+
+  add() {
+    this.service.add(this.computadora)
+      .subscribe(
+        () => {
+          this.returnToList();
+        },
+        (error) => {
+          console.error(error)
+        }
+      )
+  }
+
+  update() {
+    this.service.update(this.computadora)
+      .subscribe(
+        () => {
+          this.returnToList();
+        },
+        (erro) => {
+          console.error("Eror al actualizar " + erro);
+        }
+      )
+  }
+
+  returnToList() {
+    this.router.navigate([this.ruta]);
   }
 
 }
