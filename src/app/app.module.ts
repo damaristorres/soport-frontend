@@ -45,7 +45,6 @@ import { ComputadoraListComponent } from './@core/domain/computadora/computadora
     SettingComponent,
     ChangePasswordComponent,
     NuevoUsuarioComponent,
-    ComputadoraListComponent
   ],
   imports: [
     BrowserAnimationsModule,

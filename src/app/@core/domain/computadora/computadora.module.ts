@@ -6,6 +6,9 @@ import { SharedModule } from '../../shared/shared.module';
 import { ComputadoraRoutingModule } from './computadora-routering.module';
 import { ComputadoraEditComponent } from './computadora-edit/computadora-edit.component';
 import { ComputadoraListComponent } from './computadora-list/computadora-list.component';
+import { ComputadoraService } from './computadora.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { Dialog } from 'primeng/dialog';
 
 @NgModule({
   imports: [
@@ -14,6 +17,14 @@ import { ComputadoraListComponent } from './computadora-list/computadora-list.co
     SharedModule,
     ReactiveFormsModule,
   ],
-  declarations: [ComputadoraListComponent, ComputadoraEditComponent],
+  declarations: [
+    ComputadoraListComponent, ComputadoraEditComponent
+  ],
+  providers:[
+    ComputadoraService,
+    ConfirmationService,
+    Dialog,
+    MessageService
+  ]
 })
 export class ComputadoraModule {}

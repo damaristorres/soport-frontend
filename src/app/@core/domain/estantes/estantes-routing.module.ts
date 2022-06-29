@@ -12,7 +12,6 @@ const routes: Routes = [
       { path: 'form/:id', component: EstantesEditComponent },
     ],
   },
-  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

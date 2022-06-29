@@ -1,45 +1,42 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Computadora } from './computadora.model';
-
-interface ApiResponse {
-  ok: boolean;
-  message: string;
-  data: Computadora;
-}
 
 @Injectable({
   providedIn: 'root',
 })
 export class ComputadoraService {
-  private baseUrl: string = `${environment.URL_API}/computadora`;
 
-  constructor(private http: HttpClient) {}
+  private url = `${environment.URL_API}/computadora/`;
 
-  // Todos los computadoras
-  getComputadoras(): Observable<Computadora[]> {
-    return this.http.get<Computadora[]>(`${this.baseUrl}/activo`);
+  constructor(private http: HttpClient) {
+  }
+  //Todos los computadoras
+  getAll() {
+    return this.http.get<Computadora[]>(this.url);
   }
 
-  // Ver un computadora
-  getComputadora(id: number): Observable<Computadora> {
-    return this.http.get<Computadora>(`${this.baseUrl}/activo/${id}`);
+  getByIdComputadoras(id: number){
+    return this.http.get<Computadora[]>(this.url + id);
   }
 
-  // Crear computadora
-  postComputadora(computadora: Computadora): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(this.baseUrl, computadora);
+  //Se obtiene por id
+  getById(id: any) {
+    return this.http.get<Computadora>(this.url + id);
   }
 
-  // Editar computadora
-  putComputadora(id: number, computadora: Computadora): Observable<ApiResponse> {
-    return this.http.put<ApiResponse>(`${this.baseUrl}/${id}`, computadora);
+  //Crear
+  add(computadoras: Computadora) {
+    return this.http.post<Computadora>(this.url, computadoras);
   }
 
-  // Eliminar un computadora
-  deleteComputadora(id: number): Observable<ApiResponse> {
-    return this.http.delete<ApiResponse>(`${this.baseUrl}/${id}`);
+  //Modificar
+  update(computadoras: Computadora) {
+    return this.http.put<Computadora>(this.url + computadoras.id, computadoras);
+  }
+
+  delete(id: any) {
+    return this.http.delete(this.url + id);
   }
 }

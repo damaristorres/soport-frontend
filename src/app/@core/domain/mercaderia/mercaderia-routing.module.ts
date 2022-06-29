@@ -4,15 +4,15 @@ import { MercaderiaEditComponent } from './mercaderia-edit/mercaderia-edit.compo
 import { MercaderiaListComponent } from './mercaderia-list/mercaderia-list.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: '', component: MercaderiaListComponent },
-      { path: 'form', component: MercaderiaEditComponent },
-      { path: 'form/:id', component: MercaderiaEditComponent },
-    ],
-  },
-  { path: '**', redirectTo: '' },
+  // {
+  //   path: '',
+  //   children: [
+  //     { path: '', component: MercaderiaListComponent },
+  //     { path: 'form', component: MercaderiaEditComponent },
+  //     { path: 'form/:id', component: MercaderiaEditComponent },
+  //   ],
+  // },
+  // { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

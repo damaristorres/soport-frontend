@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       { path: '', component: ComputadoraListComponent },
       { path: 'form', component: ComputadoraEditComponent },
-      { path: 'form/:id', component: ComputadoraEditComponent },
+      { path: '/form:id', component: ComputadoraEditComponent },
     ],
   },
   { path: '**', redirectTo: '' },

@@ -2,6 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { environment } from 'src/environments/environment';
 import { Computadora } from '../computadora.model';
 import { ComputadoraService } from '../computadora.service';
 
@@ -13,44 +14,51 @@ import { ComputadoraService } from '../computadora.service';
   styleUrls: ['./computadora-list.component.css']
 })
 export class ComputadoraListComponent implements OnInit {
+  
+  computadoras: Computadora[] = [];
 
-  computadoras!: Computadora[];
-  dataLoading: boolean = true;
+  display: boolean = false;
+
+  private url = `${environment.URL_API}/computadora/`;
+
   constructor(
-    private computadoraService: ComputadoraService,
+    private service: ComputadoraService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
-    this.computadoraService.getComputadoras().subscribe((computadoras) => {
-      this.computadoras = computadoras;
-      this.dataLoading = false;
-    });
+    this.getComputadoras();
   }
 
-  deleteRow(id: number) {
-    console.log(id);
+  getComputadoras(){
+    this.service.getAll()
+      .subscribe(
+        (res) => {
+          this.computadoras = res;
+          console.log(this.computadoras);
+        },
+        (err) => {
+          console.error(err);
+        }
+      )
+  }
+
+  delete(id: any) {
     this.confirmationService.confirm({
+      message: 'Está seguro que desea eliminar esta tarea?',
       accept: () => {
-        this.onDelete(id);
+        this.service.delete(id)
+          .subscribe(
+            (res) => {
+              this.getComputadoras();
+            },
+            (error) => {
+              this.display = true;
+            }
+          )
       },
-      acceptLabel: 'Sí',
-      header: 'Sistema',
-      icon: 'pi pi-exclamation-triangle',
-      message: '¿Seguro que desea borrar el registro? Esta acción no se puede deshacer.',
-      defaultFocus: 'none',
-    });
-  }
-
-  onDelete(id: number) {
-    this.computadoraService.deleteComputadora(id).subscribe((_) => {
-      this.computadoras = this.computadoras.filter((computadora) => computadora.id != id);
-      this.messageService.add({
-        severity: 'info',
-        summary: 'Sistema',
-        detail: 'Registro eliminado',
-      });
+      acceptLabel: "Confirmar",
+      acceptButtonStyleClass: "p-button-danger p-mr-2"
     });
   }
 }

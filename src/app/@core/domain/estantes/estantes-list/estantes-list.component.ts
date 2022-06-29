@@ -14,6 +14,7 @@ import { getStatus } from '../../../enum/status.enum';
   styleUrls: ['./estantes-list.component.css']
 })
 export class EstantesListComponent implements OnInit {
+  
   depositos!: Deposito[];
   dataLoading: boolean = true;
   constructor(

@@ -13,15 +13,15 @@ import { ComputadoraListComponent } from './@core/domain/computadora/computadora
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
+  // { path: 'register', component: RegisterComponent},
 
   { path: '', component: ComputadoraListComponent, canActivate:[AuthGuard]},
   { path: 'setting', component: SettingComponent, canActivate:[AuthGuard]},
   { path: 'usuarios', component: UsuarioComponent, canActivate:[AuthGuard]},
 
-  { path: 'depositos', loadChildren: async () =>
-      (await import('./@core/domain/deposito/deposito.module')).DepositoModule, canActivate:[AuthGuard],
-  },
+  // { path: 'depositos', loadChildren: async () =>
+  //     (await import('./@core/domain/deposito/deposito.module')).DepositoModule, canActivate:[AuthGuard],
+  // },
 
   { path: 'estantes',  loadChildren: async () =>
       (await import('./@core/domain/estantes/estantes.module')).EstantesModule, canActivate:[AuthGuard],
@@ -29,6 +29,10 @@ const routes: Routes = [
 
   { path: 'mercaderias', loadChildren: async () =>
       (await import('./@core/domain/mercaderia/mercaderia.module')).MercaderiaModule, canActivate:[AuthGuard],
+  },
+
+  { path: 'computadora', loadChildren: async () =>
+      (await import('./@core/domain/computadora/computadora.module')).ComputadoraModule, canActivate:[AuthGuard],
   },
 
 ];

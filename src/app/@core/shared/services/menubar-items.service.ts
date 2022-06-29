@@ -9,28 +9,28 @@ export class MenubarItemsService {
     {
       label: 'Computadoras',
       icon: 'pi pi-desktop',
-      routerLink: ['computadoras'],
+      routerLink: ['computadora'],
     },
-    {
-      label: 'Depositos',
-      icon: 'pi pi-inbox',
-      routerLink: ['depositos'],
-    },
-    {
-      label: 'Estantes',
-      icon: 'pi pi-inbox',
-      routerLink: ['estantes'],
-    },
-    {
-      label: 'Mercaderias',
-      icon: 'pi pi-inbox',
-      routerLink: ['mercaderias'],
-    },
-    {
-      label: 'Usuarios',
-      icon: 'pi pi-user',
-      routerLink: ['usuarios'],
-    },
+    // {
+    //   label: 'Depositos',
+    //   icon: 'pi pi-inbox',
+    //   routerLink: ['depositos'],
+    // },
+    // {
+    //   label: 'Estantes',
+    //   icon: 'pi pi-inbox',
+    //   routerLink: ['estantes'],
+    // },
+    // {
+    //   label: 'Mercaderias',
+    //   icon: 'pi pi-inbox',
+    //   routerLink: ['mercaderias'],
+    // },
+    // {
+    //   label: 'Usuarios',
+    //   icon: 'pi pi-user',
+    //   routerLink: ['usuarios'],
+    // },
 
   ];
 }

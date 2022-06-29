@@ -3,18 +3,16 @@
       <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="right">
           <label id="listado">Listado de computadoras</label>
-          <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded" [routerLink]="['form']"></button>
+          <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
         </ng-template>
       </p-toolbar>
     </div>
   
     <p-table
-      *ngIf="!dataLoading; else skeleton"
       styleClass="p-datatable-striped"
-      [loading]="dataLoading"
       [value]="computadoras"
       [paginator]="true"
-      [rows]="5"
+      [rows]="10"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}"
     >
@@ -22,19 +20,43 @@
         <tr>
           <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
           <th pSortableColumn="usuario">
-            Usuario <p-sortIcon field="usuario"></p-sortIcon>
+            Usuario 
           </th>
-          <th>&nbsp;</th>
+
+          <th pSortableColumn="area">
+            Area 
+          </th>
+
+          <th pSortableColumn="tipo">
+            Tipo 
+          </th>
+
+          <th pSortableColumn="modelo">
+            Modelo
+          </th>
+
+          <th pSortableColumn="procesador">
+            Procesador 
+          </th>
+
+          <th pSortableColumn="opciones">
+            Opciones 
+          </th>
+
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-computadora>
         <tr>
           <td>{{ computadora.id }}</td>
           <td>{{ computadora.usuario }}</td>
+          <td>{{ computadora.area }}</td>
+          <td>{{ computadora.tipo }}</td>
+          <td>{{ computadora.modelo }}</td>
+          <td>{{ computadora.procesador }}</td>
           <td>
             <div class="btn">
-              <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2" [routerLink]="['form', computadora.id]" ></button>
-              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2" (click)="deleteRow(computadora.id)"></button>
+              <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadora.id]" ></button>
+              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(computadora.id)"></button>
             </div>
           </td>
         </tr>
@@ -43,8 +65,11 @@
     <ng-template #skeleton>
       <app-table-skeleton
         [headers]="['ID', 'USUARIO']"
-        [columnCount]="5"
+        [columnCount]="10"
       ></app-table-skeleton>
     </ng-template>
+
+    <p-confirmDialog header="DELETE"  icon="pi pi-exclamation-triangle" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"></p-confirmDialog>
+
   </div>
   
