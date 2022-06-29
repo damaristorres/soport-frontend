@@ -1,0 +1,15 @@
+#guardar{
+    background-color: #23a15e;
+}
+
+#card{
+    margin-top: 25px;
+}
+
+#main{
+    width: 500px;
+    height: 300px;
+    margin: 2em auto;
+    border-radius: 2em auto;
+    box-shadow: 35px 35px 35px 35px rgba(10, 9, 9, 0.14);
+}

@@ -1,4 +1,4 @@
-<p-menubar [model]="menuItems">
+<p-menubar [model]="menuItems" id="main">
   <p-button
     (click)="themeService.setTheme(!themeService.darkMode)"
     [icon]="themeService.darkMode ? 'pi pi-sun' : 'pi pi-moon'"

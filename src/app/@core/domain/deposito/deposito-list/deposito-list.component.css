@@ -1,0 +1,33 @@
+div#main{
+    width: 1880px;
+    height: 820px;
+    margin: 2em auto;
+    border-radius: 2em auto;
+    box-shadow: 35px 35px 35px 35px rgba(10, 9, 9, 0.14);
+}
+
+#listado{
+    margin: 0px 0px 10px 15px;
+    font-size: 30px;
+    font-family: 'Arial', sans-serif;
+}
+
+#edit {
+    background-color: #1f9fd7;
+}
+
+#delete {
+    background-color: #d11a2a;
+}
+
+#nuevo{
+    margin: 0px 0px 0px 1370px;
+    width: 120px;
+    border-radius: 5em;
+    background-color: #23a15e;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.btn{
+    border-radius: 5em;
+}

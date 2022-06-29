@@ -31,9 +31,9 @@ export class AuthService {
     this.router.navigate(['dashboard']);
   }
 
-  getToken() {
-    return localStorage.getItem('access_token');
-  }
+  // getToken() {
+  //   return localStorage.getItem('access_token');
+  // }
 
   setLogin(user: Usuario){
     localStorage.setItem('login',user.login);

@@ -8,13 +8,14 @@ import { RegisterComponent } from './@core/domain/register/register.component';
 import { AppModule } from './app.module';
 import { SettingComponent } from './@core/domain/setting/setting.component';
 import { UsuarioComponent } from './@core/domain/usuario/usuario-list/usuario.component';
+import { ComputadoraListComponent } from './@core/domain/computadora/computadora-list/computadora-list.component';
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
 
-  { path: '', component: DashboardComponent, canActivate:[AuthGuard]},
+  { path: '', component: ComputadoraListComponent, canActivate:[AuthGuard]},
   { path: 'setting', component: SettingComponent, canActivate:[AuthGuard]},
   { path: 'usuarios', component: UsuarioComponent, canActivate:[AuthGuard]},
 

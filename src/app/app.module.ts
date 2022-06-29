@@ -34,6 +34,7 @@ import { AuthService } from './@core/shared/services/auth.service';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ComputadoraListComponent } from './@core/domain/computadora/computadora-list/computadora-list.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     DashboardComponent, 
     SettingComponent,
     ChangePasswordComponent,
-    NuevoUsuarioComponent
+    NuevoUsuarioComponent,
+    ComputadoraListComponent
   ],
   imports: [
     BrowserAnimationsModule,
