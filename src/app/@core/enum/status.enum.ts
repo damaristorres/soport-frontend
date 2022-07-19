@@ -7,7 +7,7 @@ export function getAllEnumValues() {
     return Object.values(Status);
   }
   
-  export function getStatus(status: any) {
+  export function getStatusDescription(status: any) {
     switch (status) {
       case 'A':
         return 'Activo';

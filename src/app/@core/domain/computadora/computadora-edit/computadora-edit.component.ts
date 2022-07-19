@@ -6,6 +6,9 @@ import { DepositoService } from '../../deposito/deposito.service';
 import { switchMap, tap } from 'rxjs/operators';
 import { ComputadoraService } from '../computadora.service';
 import { Computadora } from '../computadora.model';
+import { getStatusDescription, Status } from '../../enums/status.enums';
+import { getProcesadorDescription, Procesador } from 'src/app/@core/enum/procesador.enum';
+import { getTipoDescription, Tipo } from 'src/app/@core/enum/tipo.enum';
 
 
 @Component({
@@ -18,6 +21,10 @@ export class ComputadoraEditComponent implements OnInit {
   computadoras = new Computadora();
 
   isModoEdicion: boolean = false;
+
+  estados = Object.values(Status).map(value => ({ label: getStatusDescription(value), value: value}));
+  procesador = Object.values(Procesador).map(value => ({ label: getProcesadorDescription(value), value: value}));
+  tipo = Object.values(Tipo).map(value => ({ label: getTipoDescription(value), value: value}));
 
   displayDialog: boolean = false;
 

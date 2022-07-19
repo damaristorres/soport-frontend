@@ -5,8 +5,6 @@ import { Deposito } from '../../deposito/deposito.model';
 import { Estantes } from '../estantes.model';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
-import { Status } from '../../enums/status.enums';
-import { getStatus } from '../../../enum/status.enum';
 
 @Component({
   selector: 'app-estantes-list',

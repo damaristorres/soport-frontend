@@ -2,7 +2,6 @@
     <div class="card">
       <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="right">
-          <label id="listado">Listado de computadoras</label>
           <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
         </ng-template>
       </p-toolbar>
@@ -25,6 +24,10 @@
 
           <th pSortableColumn="tipo">
             Tipo 
+          </th>
+
+          <th pSortableColumn="bp">
+            BP 
           </th>
 
           <th pSortableColumn="modelo">
@@ -52,6 +55,7 @@
           <td>{{ computadoras.usuario }}</td>
           <td>{{ computadoras.area }}</td>
           <td>{{ computadoras.tipo }}</td>
+          <td>{{ computadoras.bp }}</td>
           <td>{{ computadoras.modelo }}</td>
           <td>{{ computadoras.procesador }}</td>
           <td>
@@ -74,6 +78,15 @@
     </ng-template>
 
     <p-confirmDialog header="DELETE"  icon="pi pi-exclamation-triangle" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"></p-confirmDialog>
+
+    <p-dialog header="Error" [(visible)]="display" icon="pi pi-exclamation-triangle">
+      <p>No se ha podido eliminar</p>
+      <ng-template pTemplate="footer">
+          <p-button icon="pi pi-check" (click)="display=false" label="Ok" styleClass="p-button-text"></p-button>
+      </ng-template>
+  </p-dialog>
+
+
 
   </div>
   

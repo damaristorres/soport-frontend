@@ -1,6 +1,7 @@
 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { environment } from 'src/environments/environment';
 import { Computadora } from '../computadora.model';
@@ -24,6 +25,7 @@ export class ComputadoraListComponent implements OnInit {
   constructor(
     private service: ComputadoraService,
     private confirmationService: ConfirmationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +47,7 @@ export class ComputadoraListComponent implements OnInit {
 
   delete(id: any) {
     this.confirmationService.confirm({
-      message: 'Está seguro que desea eliminar esta tarea?',
+      message: 'Está seguro que desea eliminar?',
       accept: () => {
         this.service.delete(id)
           .subscribe(
@@ -61,4 +63,5 @@ export class ComputadoraListComponent implements OnInit {
       acceptButtonStyleClass: "p-button-danger p-mr-2"
     });
   }
+
 }

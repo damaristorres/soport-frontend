@@ -1,5 +1,6 @@
 import { Procesador } from "../../enum/procesador.enum";
 import { Tipo } from "../../enum/tipo.enum";
+import { Status } from "../enums/status.enums";
 
 export class Computadora {
 
@@ -8,7 +9,7 @@ export class Computadora {
     area!: string;
     tipo!: string;
     modelo!: string;
-    procesador!: string;
-    
+    procesador!: Procesador;
+    status!: Status;
   }
   

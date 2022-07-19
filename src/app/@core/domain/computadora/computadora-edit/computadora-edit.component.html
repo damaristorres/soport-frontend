@@ -26,7 +26,7 @@
                 <div class="p-field">
                     <span>
                         <label for="lblTipo">Tipo</label>
-                        <input type="text" id="lblTipo" pInputText [(ngModel)]="computadoras.tipo"> 
+                        <p-dropdown [options]="tipo" [(ngModel)]="computadoras.tipo" placeholder="Seleccione" optionValue="value" optionLabel="label"></p-dropdown>
                     </span>
                 </div>
 
@@ -40,7 +40,14 @@
                 <div class="p-field">
                     <span>
                         <label for="lblProcesador">Procesador</label>
-                        <input type="text" id="lblProcesador" pInputText [(ngModel)]="computadoras.procesador"> 
+                        <p-dropdown [options]="procesador" [(ngModel)]="computadoras.procesador" placeholder="Seleccione" optionValue="value" optionLabel="label"></p-dropdown>
+                    </span>
+                </div>
+
+                <div class="p-field">
+                    <span>
+                        <label for="lblStatus">Estado</label>
+                        <p-dropdown [options]="estados" [(ngModel)]="computadoras.status" placeholder="Seleccione" optionValue="value" optionLabel="label"></p-dropdown>
                     </span>
                 </div>
 
