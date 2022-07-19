@@ -3,3 +3,34 @@
     color: #256029;
     background-color: #C8E6C9; */
 }
+
+.card{
+    padding-top: 10px;
+    align-content: flex-end;
+}
+
+#nuevo{
+    width: 120px;
+    color: #256029;
+    background-color: #C8E6C9;
+}
+
+#delete{
+    color: #c63737;
+    background-color: #FFCDD2
+    ;
+}
+
+#edit{
+    background-color: #bde0fe;
+    color: #288ae0;
+    
+}
+
+#ID{
+    width: 80px;
+}
+
+.table-header{
+    text-align: center;
+}

@@ -11,18 +11,19 @@
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}">
 
-      <ng-template pTemplate="header">
+      <ng-template pTemplate="header" class="align-items-center">
         <tr>
-          <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
-          <th pSortableColumn="usuario">
+          <th pSortableColumn="id" id="ID">ID <p-sortIcon field="id"></p-sortIcon></th>
+
+          <th pSortableColumn="usuario" id="usuario">
             Usuario 
           </th>
 
-          <th pSortableColumn="area">
+          <th pSortableColumn="area" id="area">
             Area 
           </th>
 
-          <th pSortableColumn="tipo">
+          <th pSortableColumn="tipo" id="tipo">
             Tipo 
           </th>
 
@@ -50,11 +51,11 @@
       </ng-template>
       
       <ng-template pTemplate="body" let-computadoras>
-        <tr>
-          <td>{{ computadoras.id }}</td>
-          <td>{{ computadoras.usuario }}</td>
-          <td>{{ computadoras.area }}</td>
-          <td>{{ computadoras.tipo }}</td>
+        <tr id="list">
+          <td id="ID">{{ computadoras.id }}</td>
+          <td id="usuario">{{ computadoras.usuario }}</td>
+          <td id="area">{{ computadoras.area }}</td>
+          <td id="tipo">{{ computadoras.tipo }}</td>
           <td>{{ computadoras.bp }}</td>
           <td>{{ computadoras.modelo }}</td>
           <td>{{ computadoras.procesador }}</td>
