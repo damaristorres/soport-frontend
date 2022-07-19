@@ -5,21 +5,42 @@
                 <div class="p-col-12 p-md-6">
                         <span style="width: 30px;">
                             <label for="lblId">ID</label>
-                            <p-inputNumber [disabled]="true" id="lblId" [(ngModel)]="computadora.id"> </p-inputNumber>
+                            <p-inputNumber [disabled]="true" id="lblId" [(ngModel)]="computadoras.id"> </p-inputNumber>
                         </span>
                 </div>
                 
                 <div class="p-field">
                     <span>
                         <label for="lblUsuario">Usuario</label>
-                        <input type="text" id="lblTitulo" pInputText [(ngModel)]="computadora.usuario"> 
+                        <input type="text" id="lblUsuario" pInputText [(ngModel)]="computadoras.usuario"> 
                     </span>
                 </div>
 
                 <div class="p-field">
                     <span>
                         <label for="lblArea">Area</label>
-                        <input type="text" id="lblTitulo" pInputText [(ngModel)]="computadora.area"> 
+                        <input type="text" id="lblArea" pInputText [(ngModel)]="computadoras.area"> 
+                    </span>
+                </div>
+
+                <div class="p-field">
+                    <span>
+                        <label for="lblTipo">Tipo</label>
+                        <input type="text" id="lblTipo" pInputText [(ngModel)]="computadoras.tipo"> 
+                    </span>
+                </div>
+
+                <div class="p-field">
+                    <span>
+                        <label for="lblModelo">Modelo</label>
+                        <input type="text" id="lblModelo" pInputText [(ngModel)]="computadoras.modelo"> 
+                    </span>
+                </div>
+
+                <div class="p-field">
+                    <span>
+                        <label for="lblProcesador">Procesador</label>
+                        <input type="text" id="lblProcesador" pInputText [(ngModel)]="computadoras.procesador"> 
                     </span>
                 </div>
 

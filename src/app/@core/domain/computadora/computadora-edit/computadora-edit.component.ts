@@ -15,7 +15,7 @@ import { Computadora } from '../computadora.model';
 })
 export class ComputadoraEditComponent implements OnInit {
   
-  computadora = new Computadora();
+  computadoras = new Computadora();
 
   isModoEdicion: boolean = false;
 
@@ -49,7 +49,7 @@ export class ComputadoraEditComponent implements OnInit {
             this.service.getById(id)
               .subscribe(
                 (computadora) => {
-                  this.computadora = computadora;
+                  this.computadoras = computadora;
                 },
                 (error) => {
                   console.log("error al cargar " + error);
@@ -61,7 +61,7 @@ export class ComputadoraEditComponent implements OnInit {
   }
 
   add() {
-    this.service.add(this.computadora)
+    this.service.add(this.computadoras)
       .subscribe(
         () => {
           this.returnToList();
@@ -73,7 +73,7 @@ export class ComputadoraEditComponent implements OnInit {
   }
 
   update() {
-    this.service.update(this.computadora)
+    this.service.update(this.computadoras)
       .subscribe(
         () => {
           this.returnToList();

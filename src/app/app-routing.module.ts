@@ -19,9 +19,9 @@ const routes: Routes = [
   { path: 'setting', component: SettingComponent, canActivate:[AuthGuard]},
   { path: 'usuarios', component: UsuarioComponent, canActivate:[AuthGuard]},
 
-  // { path: 'depositos', loadChildren: async () =>
-  //     (await import('./@core/domain/deposito/deposito.module')).DepositoModule, canActivate:[AuthGuard],
-  // },
+   { path: 'depositos', loadChildren: async () =>
+       (await import('./@core/domain/deposito/deposito.module')).DepositoModule, canActivate:[AuthGuard],
+   },
 
   { path: 'estantes',  loadChildren: async () =>
       (await import('./@core/domain/estantes/estantes.module')).EstantesModule, canActivate:[AuthGuard],

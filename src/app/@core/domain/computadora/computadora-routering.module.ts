@@ -4,15 +4,11 @@ import { ComputadoraEditComponent } from './computadora-edit/computadora-edit.co
 import { ComputadoraListComponent } from './computadora-list/computadora-list.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
+ 
       { path: '', component: ComputadoraListComponent },
       { path: 'form', component: ComputadoraEditComponent },
-      { path: '/form:id', component: ComputadoraEditComponent },
-    ],
-  },
-  { path: '**', redirectTo: '' },
+      { path: 'form/:id', component: ComputadoraEditComponent },
+  
 ];
 
 @NgModule({

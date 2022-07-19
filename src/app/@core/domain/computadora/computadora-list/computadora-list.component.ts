@@ -19,7 +19,7 @@ export class ComputadoraListComponent implements OnInit {
 
   display: boolean = false;
 
-  private url = `${environment.URL_API}/computadora/`;
+  private url = `${environment.URL_API}/computadora`;
 
   constructor(
     private service: ComputadoraService,

@@ -8,14 +8,10 @@
       </p-toolbar>
     </div>
   
-    <p-table
-      styleClass="p-datatable-striped"
-      [value]="computadoras"
-      [paginator]="true"
-      [rows]="10"
+    <p-table  [value]="computadoras" [paginator]="true" [rows]="30"
       [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}"
-    >
+      currentPageReportTemplate="{first} - {last} de {totalRecords}">
+
       <ng-template pTemplate="header">
         <tr>
           <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
@@ -39,24 +35,32 @@
             Procesador 
           </th>
 
+          <th pSortableColumn="status">
+            Estado 
+          </th>
+
           <th pSortableColumn="opciones">
             Opciones 
           </th>
 
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-computadora>
+      
+      <ng-template pTemplate="body" let-computadoras>
         <tr>
-          <td>{{ computadora.id }}</td>
-          <td>{{ computadora.usuario }}</td>
-          <td>{{ computadora.area }}</td>
-          <td>{{ computadora.tipo }}</td>
-          <td>{{ computadora.modelo }}</td>
-          <td>{{ computadora.procesador }}</td>
+          <td>{{ computadoras.id }}</td>
+          <td>{{ computadoras.usuario }}</td>
+          <td>{{ computadoras.area }}</td>
+          <td>{{ computadoras.tipo }}</td>
+          <td>{{ computadoras.modelo }}</td>
+          <td>{{ computadoras.procesador }}</td>
+          <td>
+            <div id="status">{{ computadoras.status }}</div>
+          </td>
           <td>
             <div class="btn">
-              <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadora.id]" ></button>
-              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(computadora.id)"></button>
+              <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadoras.id]" ></button>
+              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(computadoras.id)"></button>
             </div>
           </td>
         </tr>
