@@ -3,20 +3,29 @@
       <p-toolbar styleClass="mb-4">
         <ng-template pTemplate="right">
           <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
+
+          <div class="flex align-items-center "  id="busqueda">
+              <span class="p-input-icon-left">
+                  <i class="pi pi-search"></i>
+                  <input pInputText type="text" autocomplete="on" (input)="dt1.filterGlobal($event.target, 'contains')" placeholder="Search..." />
+              </span>
+          </div>
         </ng-template>
       </p-toolbar>
     </div>
   
-    <p-table  [value]="computadoras" [paginator]="true" [rows]="30"
+    <p-table #dt1 [value]="computadoras" [paginator]="true" [rows]="30"
       [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}">
+      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['usuario','area','tipo','bp', 'status']" responsiveLayout="scroll"
+      [rowHover]="true" dataKey="id">
 
       <ng-template pTemplate="header" class="align-items-center">
-        <tr>
-          <th pSortableColumn="id" id="ID">ID <p-sortIcon field="id"></p-sortIcon></th>
+        <tr >
+          <th pSortableColumn="id" id="ID">ID <p-sortIcon></p-sortIcon></th>
 
           <th pSortableColumn="usuario" id="usuario">
             Usuario 
+            <p-columnFilter type="text" field="usuario" display="menu"></p-columnFilter>
           </th>
 
           <th pSortableColumn="area" id="area">
@@ -49,9 +58,10 @@
 
         </tr>
       </ng-template>
+    
       
       <ng-template pTemplate="body" let-computadoras>
-        <tr id="list">
+        <tr>
           <td id="ID">{{ computadoras.id }}</td>
           <td id="usuario">{{ computadoras.usuario }}</td>
           <td id="area">{{ computadoras.area }}</td>
@@ -59,9 +69,7 @@
           <td>{{ computadoras.bp }}</td>
           <td>{{ computadoras.modelo }}</td>
           <td>{{ computadoras.procesador }}</td>
-          <td>
-            <div id="status">{{ computadoras.status }}</div>
-          </td>
+          <td>{{ computadoras.status }}</td>
           <td>
             <div class="btn">
               <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadoras.id]" ></button>

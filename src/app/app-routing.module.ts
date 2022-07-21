@@ -34,7 +34,9 @@ const routes: Routes = [
   { path: 'computadora', loadChildren: async () =>
       (await import('./@core/domain/computadora/computadora.module')).ComputadoraModule, canActivate:[AuthGuard],
   },
-
+  { path: 'colaborador', loadChildren: async () =>
+      (await import('./@core/domain/colaborador/colaborador.module')).ColaboradorModule, canActivate:[AuthGuard],
+  },
 ];
 
 @NgModule({

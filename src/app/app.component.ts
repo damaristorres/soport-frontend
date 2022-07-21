@@ -28,6 +28,7 @@ export class AppComponent {
     this.authService.logout();
   }
 }
+
 function ConfiguracionesComponent(ConfiguracionesComponent: any) {
   throw new Error('Function not implemented.');
 }

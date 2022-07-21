@@ -1,5 +1,5 @@
 .p-fluid {
-    width: 800px;
+    width: 600px;
     height: auto;
     margin: auto;
     margin-top: 20px;
@@ -12,7 +12,7 @@
 }
 
 .p-field{
-    padding-top: 10px;
+    padding-top: 20px;
     margin: auto;
     width: 500px;
 }
@@ -24,8 +24,14 @@
 
 }
 
+#guardar{
+    color: #256029;
+    background-color: #C8E6C9;
+}
+
 #cancelar{
-    margin-top: 15px;
+    margin-top: 25px;
     margin-block-end: 25px;
-    background-color: rgb(153, 150, 150);
+    color: #c63737;
+    background-color: #FFCDD2;
 }

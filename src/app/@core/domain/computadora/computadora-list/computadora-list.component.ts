@@ -1,13 +1,9 @@
-
-
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { environment } from 'src/environments/environment';
 import { Computadora } from '../computadora.model';
 import { ComputadoraService } from '../computadora.service';
-
-
 
 @Component({
   selector: 'app-computadora-list',

@@ -12,6 +12,11 @@ export class MenubarItemsService {
       routerLink: ['computadora'],
     },
     // {
+    //   label: 'Colaboradores',
+    //   icon: 'pi pi-user',
+    //   routerLink: ['colaborador'],
+    // },
+    // {
     //   label: 'Depositos',
     //   icon: 'pi pi-inbox',
     //   routerLink: ['depositos'],

@@ -4,6 +4,10 @@
     background-color: #C8E6C9; */
 }
 
+.flex{
+    padding-left: 500px;
+}
+
 .card{
     padding-top: 10px;
     align-content: flex-end;
@@ -17,7 +21,7 @@
 
 #delete{
     color: #c63737;
-    background-color: #FFCDD2
+    background-color: #FFCDD2;
     ;
 }
 
