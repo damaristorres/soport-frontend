@@ -1,6 +1,11 @@
 export enum Tipo {
     NOTEBOOK = "Notebook",
-    COMPUTADORA = "PC"
+    COMPUTADORA = "PC",
+    MONITOR = 'Monitor',
+    TECLADO = 'Teclado',
+    UPS = 'UPS',
+    AURICULAR = 'Auriculares',
+    TELEFONO = 'Teléfono',
 }
 
 export function getAllEnumValues() {
@@ -14,7 +19,22 @@ export function getAllEnumValues() {
   
       case 'PC':
         return 'PC';
+
+      case 'Monitor':
+      return 'Monitor';
+
+      case 'Teclado':
+        return 'Teclado';
+      
+      case 'UPS':
+        return 'UPS';
         
+      case 'Auriculares':
+        return 'Auriculares';
+
+      case 'Teléfono':
+        return 'Teléfono';
+
       default:
           return null;
     }

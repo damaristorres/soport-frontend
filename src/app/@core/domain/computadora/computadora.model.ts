@@ -8,6 +8,7 @@ export class Computadora {
     usuario!: string;
     area!: string;
     tipo!: string;
+    bp!: string;
     modelo!: string;
     procesador!: Procesador;
     status!: Status;

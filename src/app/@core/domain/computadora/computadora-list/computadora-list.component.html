@@ -1,61 +1,40 @@
 <div id="main">
-    <div class="card">
+    <div class="p-card-content">
       <p-toolbar styleClass="mb-4">
-        <ng-template pTemplate="right">
-          <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
-
-          <div class="flex align-items-center "  id="busqueda">
-              <span class="p-input-icon-left">
-                  <i class="pi pi-search"></i>
-                  <input pInputText type="text" autocomplete="on" (input)="dt1.filterGlobal($event.target, 'contains')" placeholder="Search..." />
-              </span>
-          </div>
-        </ng-template>
+          <ng-template pTemplate="right">
+            <div>
+            <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
+            </div>
+          </ng-template>
       </p-toolbar>
     </div>
   
     <p-table #dt1 [value]="computadoras" [paginator]="true" [rows]="30"
       [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['usuario','area','tipo','bp', 'status']" responsiveLayout="scroll"
+      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['computadoras.usuario','computadoras.area',
+      'computadoras.tipo','computadoras.bp', 'computadoras.status']" responsiveLayout="scroll"
       [rowHover]="true" dataKey="id">
+
+      <ng-template pTemplate="caption">
+        <div class="p-d-flex">
+          <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target, 'contains')" placeholder="Search..." />
+                </span>
+        </div>
+      </ng-template>
 
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
-          <th pSortableColumn="id" id="ID">ID <p-sortIcon></p-sortIcon></th>
-
-          <th pSortableColumn="usuario" id="usuario">
-            Usuario 
-            <p-columnFilter type="text" field="usuario" display="menu"></p-columnFilter>
-          </th>
-
-          <th pSortableColumn="area" id="area">
-            Area 
-          </th>
-
-          <th pSortableColumn="tipo" id="tipo">
-            Tipo 
-          </th>
-
-          <th pSortableColumn="bp">
-            BP 
-          </th>
-
-          <th pSortableColumn="modelo">
-            Modelo
-          </th>
-
-          <th pSortableColumn="procesador">
-            Procesador 
-          </th>
-
-          <th pSortableColumn="status">
-            Estado 
-          </th>
-
-          <th pSortableColumn="opciones">
-            Opciones 
-          </th>
-
+          <th pSortableColumn="id" id="ID">ID<p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="usuario" id="usuario">Usuario</th>
+          <th pSortableColumn="area" id="area">Area</th>
+          <th pSortableColumn="tipo" id="tipo">Tipo</th>
+          <th pSortableColumn="bp">BP</th>
+          <th pSortableColumn="modelo">Modelo</th>
+          <th pSortableColumn="procesador">Procesador</th>
+          <th pSortableColumn="status">Estado</th>
+          <th pSortableColumn="opciones">Opciones</th>
         </tr>
       </ng-template>
     

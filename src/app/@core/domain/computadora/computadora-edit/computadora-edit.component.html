@@ -1,7 +1,6 @@
     <div class="p-fluid p-formgrid p-grid">
             <div class="p-card-content">
                 <div class="p-fluid ng-star-inserted">
-
                     <div class="p-field">
                                 <label id="form">ID</label>
                                 <p-inputNumber [disabled]="true"  [(ngModel)]="computadoras.id"> </p-inputNumber>
@@ -25,6 +24,13 @@
                         <span>
                             <label id="form">Tipo</label>
                             <p-dropdown [options]="tipo" [(ngModel)]="computadoras.tipo" placeholder="Seleccione" optionValue="value" optionLabel="label"></p-dropdown>
+                        </span>
+                    </div>
+
+                    <div class="p-field">
+                        <span>
+                            <label id="form">BP</label>
+                            <input type="text" id="lblBp" pInputText [(ngModel)]="computadoras.bp"> 
                         </span>
                     </div>
 
