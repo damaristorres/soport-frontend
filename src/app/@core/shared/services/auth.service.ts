@@ -28,12 +28,12 @@ export class AuthService {
     console.log(result);
     this.setLogin(this.user);
     localStorage.setItem('access_token',result.access_token);
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['computadora']);
   }
 
-  // getToken() {
-  //   return localStorage.getItem('access_token');
-  // }
+  getToken() {
+    return localStorage.getItem('access_token');
+  }
 
   setLogin(user: Usuario){
     localStorage.setItem('login',user.login);

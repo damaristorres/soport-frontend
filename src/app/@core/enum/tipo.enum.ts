@@ -1,11 +1,14 @@
 export enum Tipo {
+    NULL = "-",
     NOTEBOOK = "Notebook",
     COMPUTADORA = "PC",
     MONITOR = 'Monitor',
     TECLADO = 'Teclado',
+    TELEFONO = 'Telefono',
     UPS = 'UPS',
+    EQUIPO_VIDEO_CONFERENCIA = 'Equipo de video conferencia',
     AURICULAR = 'Auriculares',
-    TELEFONO = 'Teléfono',
+    SILLA = 'Silla'
 }
 
 export function getAllEnumValues() {
@@ -14,6 +17,9 @@ export function getAllEnumValues() {
   
   export function getTipoDescription(tipo: any) {
     switch (tipo) {
+      case '-':
+        return '-';
+
       case 'Notebook':
         return 'Notebook';
   
@@ -28,12 +34,18 @@ export function getAllEnumValues() {
       
       case 'UPS':
         return 'UPS';
+
+      case 'Equipo de video conferencia':
+        return 'Equipo de video conferencia';
         
       case 'Auriculares':
         return 'Auriculares';
 
-      case 'Teléfono':
-        return 'Teléfono';
+      case 'Telefono':
+        return 'Telefono';
+
+      case 'Silla':
+        return 'Silla';
 
       default:
           return null;

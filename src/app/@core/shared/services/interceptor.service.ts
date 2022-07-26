@@ -23,7 +23,7 @@ export class InterceptorService implements HttpInterceptor{
     
     const headers = new HttpHeaders({
       'Content-Type':  'application/json',
-      // 'authorization': 'Bearer '+ this.auth.getToken()?.toString()
+      'authorization': 'Bearer '+ this.auth.getToken()?.toString()
     });
 
     const reqClone = request.clone({

@@ -9,49 +9,50 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 [value]="computadoras" [paginator]="true" [rows]="30"
+    <p-table #dt1 [value]="computadoras" [paginator]="true" [rows]="500"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['computadoras.usuario','computadoras.area',
       'computadoras.tipo','computadoras.bp', 'computadoras.status']" responsiveLayout="scroll"
       [rowHover]="true" dataKey="id">
 
-      <ng-template pTemplate="caption">
+      <!-- <ng-template pTemplate="caption">
         <div class="p-d-flex">
           <span class="p-input-icon-left p-ml-auto">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt1.filterGlobal($event.target, 'contains')" placeholder="Search..." />
                 </span>
         </div>
-      </ng-template>
+      </ng-template> -->
 
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
-          <th pSortableColumn="id" id="ID">ID<p-sortIcon field="id"></p-sortIcon></th>
-          <th pSortableColumn="usuario" id="usuario">Usuario</th>
-          <th pSortableColumn="area" id="area">Area</th>
-          <th pSortableColumn="tipo" id="tipo">Tipo</th>
-          <th pSortableColumn="bp">BP</th>
-          <th pSortableColumn="modelo">Modelo</th>
-          <th pSortableColumn="procesador">Procesador</th>
-          <th pSortableColumn="status">Estado</th>
-          <th pSortableColumn="opciones">Opciones</th>
+          <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>
+          <th id="listado">Usuario</th>
+          <th id="listado">Area</th>
+          <th id="listado">Tipo</th>
+          <th id="listado">BP</th>
+          <th id="listado">Marca</th>
+          <th id="listado">Procesador</th>
+          <th id="listado">Estado</th>
+          <th id="listado">Opciones</th>
         </tr>
       </ng-template>
     
       
       <ng-template pTemplate="body" let-computadoras>
         <tr>
-          <td id="ID">{{ computadoras.id }}</td>
-          <td id="usuario">{{ computadoras.usuario }}</td>
-          <td id="area">{{ computadoras.area }}</td>
-          <td id="tipo">{{ computadoras.tipo }}</td>
-          <td>{{ computadoras.bp }}</td>
-          <td>{{ computadoras.modelo }}</td>
-          <td>{{ computadoras.procesador }}</td>
-          <td>{{ computadoras.status }}</td>
+          <td id="listado">{{ computadoras.id }}</td>
+          <td id="listado">{{ computadoras.usuario }}</td>
+          <td id="listado">{{ computadoras.area }}</td>
+          <td id="listado">{{ computadoras.tipo }}</td>
+          <td id="listado">{{ computadoras.bp }}</td>
+          <td id="listado">{{ computadoras.modelo }}</td>
+          <td id="listado">{{ computadoras.procesador }}</td>
+          <td id="listado">{{ computadoras.status }}</td>
           <td>
             <div class="btn">
               <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadoras.id]" ></button>
+              <!-- <button pButton pRipple icon="pi pi-pencil" class="p-button-primary p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadoras.id]" ></button>  -->
               <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(computadoras.id)"></button>
             </div>
           </td>

@@ -13,7 +13,10 @@
     align-content: flex-end;
 }
 
-
+#listado{
+    text-align: center;
+    width: auto;
+}
 
 #nuevo{
     width: 120px;
@@ -30,13 +33,12 @@
 #edit{
     background-color: #bde0fe;
     color: #288ae0;
-    
 }
 
-#ID{
-    width: 80px;
+#status{
+    padding: 5px;
 }
 
 .table-header{
     text-align: center;
-}
+} 
