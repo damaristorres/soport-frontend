@@ -9,12 +9,12 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 [value]="computadoras" [paginator]="true" [rows]="500"
+    <p-table #dt1 [value]="upses" [paginator]="true" [rows]="500"
       [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['computadoras.usuario','computadoras.area',
-      'computadoras.tipo','computadoras.bp', 'computadoras.status']" responsiveLayout="scroll"
+      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['upses.usuario','upses.area',
+      'upses.tipo','upses.bp', 'upses.status']" responsiveLayout="scroll"
       [rowHover]="true" dataKey="id">
-
+  
       <!-- <ng-template pTemplate="caption">
         <div class="p-d-flex">
           <span class="p-input-icon-left p-ml-auto">
@@ -23,61 +23,51 @@
                 </span>
         </div>
       </ng-template> -->
-
+  
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
           <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>
           <th id="listado">Usuario</th>
           <th id="listado">Area</th>
-          <th id="listado">Tipo</th>
+          <th id="listado">Interno</th>
           <th id="listado">BP</th>
-          <th id="listado">Marca</th>
-          <th id="listado">Procesador</th>
           <th id="listado">Estado</th>
           <th id="listado">Opciones</th>
         </tr>
       </ng-template>
     
       
-      <ng-template pTemplate="body" let-computadoras>
+      <ng-template pTemplate="body" let-upses>
         <tr>
-          <td id="listado">{{ computadoras.id }}</td>
-          <td id="listado">{{ computadoras.usuario }}</td>
-          <td id="listado">{{ computadoras.area }}</td>
-          <td id="listado">{{ computadoras.tipo }}</td>
-          <td id="listado">{{ computadoras.bp }}</td>
-          <td id="listado">{{ computadoras.modelo }}</td>
-          <td id="listado">{{ computadoras.procesador }}</td>
-          <td id="listado">
-            <div [ngStyle]="{'background-color':computadoras.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': computadoras.status === 'Activo' ? '#256029' : '#c63737'}">{{ computadoras.status }}</div>
+          <td id="listado">{{ upses.id }}</td>
+          <td id="listado">{{ upses.usuario }}</td>
+          <td id="listado">{{ upses.area }}</td>
+          <td id="listado">{{ upses.interno }}</td>
+          <td id="listado">{{ upses.bp }}</td>
+          <td id="status">
+            <div [ngStyle]="{'background-color':upses.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': upses.status === 'Activo' ? '#256029' : '#c63737'}">{{ upses.status }}</div>
           </td>
           <td>
             <div class="btn">
-              <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadoras.id]" ></button>
-              <!-- <button pButton pRipple icon="pi pi-pencil" class="p-button-primary p-button-rounded mr-2 p-button-info" [routerLink]="['form', computadoras.id]" ></button>  -->
-              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(computadoras.id)"></button>
+              <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', upses.id]" ></button>
+              <!-- <button pButton pRipple icon="pi pi-pencil" class="p-button-primary p-button-rounded mr-2 p-button-info" [routerLink]="['form', upses.id]" ></button>  -->
+              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(upses.id)"></button>
             </div>
           </td>
         </tr>
       </ng-template>
     </p-table>
-    <ng-template #skeleton>
-      <app-table-skeleton
-        [headers]="['ID', 'USUARIO']"
-        [columnCount]="10"
-      ></app-table-skeleton>
-    </ng-template>
-
+  
     <p-confirmDialog header="DELETE"  icon="pi pi-exclamation-triangle" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"></p-confirmDialog>
-
+  
     <p-dialog header="Error" [(visible)]="display" icon="pi pi-exclamation-triangle">
       <p>No se ha podido eliminar</p>
       <ng-template pTemplate="footer">
           <p-button icon="pi pi-check" (click)="display=false" label="Ok" styleClass="p-button-text"></p-button>
       </ng-template>
   </p-dialog>
-
-
-
+  
+  
+  
   </div>
   

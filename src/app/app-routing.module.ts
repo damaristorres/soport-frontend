@@ -37,6 +37,18 @@ const routes: Routes = [
   { path: 'colaborador', loadChildren: async () =>
       (await import('./@core/domain/colaborador/colaborador.module')).ColaboradorModule, canActivate:[AuthGuard],
   },
+  { path: 'telefono', loadChildren: async () =>
+      (await import('./@core/domain/telefono/telefono.module')).TelefonoModule, canActivate:[AuthGuard],
+  },
+  { path: 'monitor', loadChildren: async () =>
+      (await import('./@core/domain/monitor/monitor.module')).MonitorModule, canActivate:[AuthGuard],
+  },
+  { path: 'ups', loadChildren: async () =>
+      (await import('./@core/domain/ups/ups.module')).UpsModule, canActivate:[AuthGuard],
+  },
+  { path: 'teclado', loadChildren: async () =>
+      (await import('./@core/domain/teclado/teclado.module')).TecladoModule, canActivate:[AuthGuard],
+  },
 ];
 
 @NgModule({

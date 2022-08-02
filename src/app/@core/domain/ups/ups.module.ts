@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 import { PrimeNgModule } from 'src/app/@core/shared/prime-ng/prime-ng.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
-import { ComputadoraRoutingModule } from './computadora-routering.module';
-import { ComputadoraEditComponent } from './computadora-edit/computadora-edit.component';
-import { ComputadoraListComponent } from './computadora-list/computadora-list.component';
-import { ComputadoraService } from './computadora.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Dialog, DialogModule } from 'primeng/dialog';
 import { Calendar, CalendarModule } from 'primeng/calendar';
+import { TriStateCheckboxModule } from 'primeng/tristatecheckbox';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -19,12 +16,16 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { UpsRoutingModule } from './ups-routering.module';
+import { UpsListComponent } from './ups-list/ups-list.component';
+import { UpsEditComponent } from './ups-edit/ups-edit.component';
+import { UpsService } from './ups.service';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    ComputadoraRoutingModule,
+    UpsRoutingModule,
     SharedModule,
     ReactiveFormsModule,
     CalendarModule,
@@ -43,13 +44,13 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputTextareaModule,
   ],
   declarations: [
-    ComputadoraListComponent, ComputadoraEditComponent
+    UpsListComponent, UpsEditComponent
   ],
   providers:[
-    ComputadoraService,
+    UpsService,
     ConfirmationService,
     Dialog,
     MessageService
   ]
 })
-export class ComputadoraModule {}
+export class UpsModule {}

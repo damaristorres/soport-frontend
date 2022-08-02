@@ -11,31 +11,28 @@ export class MenubarItemsService {
       icon: 'pi pi-desktop',
       routerLink: ['computadora'],
     },
-    // {
-    //   label: 'Colaboradores',
-    //   icon: 'pi pi-user',
-    //   routerLink: ['colaborador'],
-    // },
-    // {
-    //   label: 'Depositos',
-    //   icon: 'pi pi-inbox',
-    //   routerLink: ['depositos'],
-    // },
-    // {
-    //   label: 'Estantes',
-    //   icon: 'pi pi-inbox',
-    //   routerLink: ['estantes'],
-    // },
-    // {
-    //   label: 'Mercaderias',
-    //   icon: 'pi pi-inbox',
-    //   routerLink: ['mercaderias'],
-    // },
-    // {
-    //   label: 'Usuarios',
-    //   icon: 'pi pi-user',
-    //   routerLink: ['usuarios'],
-    // },
+   
+    {
+      label: 'Teléfonos',
+      icon: 'pi pi-phone',
+      routerLink: ['telefono'],
+    },
+    {
+      label: 'Monitores',
+      icon: 'pi pi-desktop',
+      routerLink: ['monitor'],
+    },
+    {
+      label: 'UPS',
+      icon: 'pi pi-inbox',
+      routerLink: ['ups'],
+    },
+    {
+      label: 'Teclados',
+      icon: 'pi pi-th-large',
+      routerLink: ['teclado'],
+    },
+
 
   ];
 }
