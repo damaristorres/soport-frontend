@@ -11,7 +11,11 @@ export class MenubarItemsService {
       icon: 'pi pi-desktop',
       routerLink: ['computadora'],
     },
-   
+    {
+      label: 'Notebook',
+      icon: 'pi pi-tablet',
+      routerLink: ['notebook'],
+    },
     {
       label: 'Teléfonos',
       icon: 'pi pi-phone',

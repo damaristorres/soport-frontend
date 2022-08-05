@@ -34,6 +34,12 @@
     ;
 }
 
+#status{
+    text-align: center;
+    width: 100px;
+    padding: 5px;
+}
+
 #edit{
     background-color: #bde0fe;
     color: #288ae0;

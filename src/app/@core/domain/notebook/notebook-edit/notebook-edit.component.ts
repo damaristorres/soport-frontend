@@ -1,24 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ConfirmationService, MessageService } from 'primeng/api';
-import { DepositoService } from '../../deposito/deposito.service';
-import { switchMap, tap } from 'rxjs/operators';
-import { ComputadoraService } from '../computadora.service';
-import { Computadora } from '../computadora.model';
-import { getStatusDescription, Status } from '../../enums/status.enums';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ConfirmationService } from 'primeng/api';
 import { getProcesadorDescription, Procesador } from 'src/app/@core/enum/procesador.enum';
-import { getTipoDescription, Tipo } from 'src/app/@core/enum/tipo.enum';
-
+import { getStatusDescription, Status } from '../../enums/status.enums';
+import { Notebook } from '../notebook.model';
+import { NotebookService } from '../notebook.service';
 
 @Component({
-  selector: 'app-computadora-edit',
-  templateUrl: './computadora-edit.component.html',
-  styleUrls: ['./computadora-edit.component.css']
+  selector: 'app-notebook-edit',
+  templateUrl: './notebook-edit.component.html',
+  styleUrls: ['./notebook-edit.component.css']
 })
-export class ComputadoraEditComponent implements OnInit {
-  
-  computadoras = new Computadora();
+export class NotebookEditComponent implements OnInit {
+
+ notebookes = new Notebook();
 
   isModoEdicion: boolean = false;
 
@@ -29,12 +24,12 @@ export class ComputadoraEditComponent implements OnInit {
 
   submitted: boolean | undefined;
 
-  ruta = "/computadora";
+  ruta = "/notebook";
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private service: ComputadoraService,
+    private service: NotebookService,
     private confirmationService: ConfirmationService
 
   ) { }
@@ -54,8 +49,8 @@ export class ComputadoraEditComponent implements OnInit {
             this.isModoEdicion = true;
             this.service.getById(id)
               .subscribe(
-                (computadora) => {
-                  this.computadoras = computadora;
+                (notebook) => {
+                  this.notebookes = notebook;
                 },
                 (error) => {
                   console.log("error al cargar " + error);
@@ -67,7 +62,7 @@ export class ComputadoraEditComponent implements OnInit {
   }
 
   add() {
-    this.service.add(this.computadoras)
+    this.service.add(this.notebookes)
       .subscribe(
         () => {
           this.returnToList();
@@ -79,7 +74,7 @@ export class ComputadoraEditComponent implements OnInit {
   }
 
   update() {
-    this.service.update(this.computadoras)
+    this.service.update(this.notebookes)
       .subscribe(
         () => {
           this.returnToList();

@@ -6,7 +6,7 @@ export class Telefono {
 
     id!: number;
     usuario!: string;
-    area!: string;
+    ubicacion!: string;
     interno!: string;
     bp!: string;
     status!: Status;

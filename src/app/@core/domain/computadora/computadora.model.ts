@@ -6,7 +6,7 @@ export class Computadora {
 
     id!: number;
     usuario!: string;
-    area!: string;
+    ubicacion!: string;
     tipo!: string;
     bp!: string;
     modelo!: string;

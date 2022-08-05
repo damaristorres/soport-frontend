@@ -3,6 +3,7 @@
       <p-toolbar styleClass="mb-4">
           <ng-template pTemplate="right">
             <div>
+              <h1 id="titulo">Computadoras</h1>
             <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
             </div>
           </ng-template>
@@ -11,25 +12,15 @@
   
     <p-table #dt1 [value]="computadoras" [paginator]="true" [rows]="500"
       [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['computadoras.usuario','computadoras.area',
-      'computadoras.tipo','computadoras.bp', 'computadoras.status']" responsiveLayout="scroll"
+      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['computadoras.usuario','computadoras.ubicacion',
+      'computadoras.bp', 'computadoras.status']" responsiveLayout="scroll"
       [rowHover]="true" dataKey="id">
-
-      <!-- <ng-template pTemplate="caption">
-        <div class="p-d-flex">
-          <span class="p-input-icon-left p-ml-auto">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target, 'contains')" placeholder="Search..." />
-                </span>
-        </div>
-      </ng-template> -->
 
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
           <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>
           <th id="listado">Usuario</th>
-          <th id="listado">Area</th>
-          <th id="listado">Tipo</th>
+          <th id="listado">Ubicación</th>
           <th id="listado">BP</th>
           <th id="listado">Marca</th>
           <th id="listado">Procesador</th>
@@ -43,8 +34,7 @@
         <tr>
           <td id="listado">{{ computadoras.id }}</td>
           <td id="listado">{{ computadoras.usuario }}</td>
-          <td id="listado">{{ computadoras.area }}</td>
-          <td id="listado">{{ computadoras.tipo }}</td>
+          <td id="listado">{{ computadoras.ubicacion }}</td>
           <td id="listado">{{ computadoras.bp }}</td>
           <td id="listado">{{ computadoras.modelo }}</td>
           <td id="listado">{{ computadoras.procesador }}</td>

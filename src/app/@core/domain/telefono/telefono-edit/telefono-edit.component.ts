@@ -48,8 +48,8 @@ export class TelefonoEditComponent implements OnInit {
             this.isModoEdicion = true;
             this.service.getById(id)
               .subscribe(
-                (computadora) => {
-                  this.telefonos = computadora;
+                (telefono) => {
+                  this.telefonos = telefono;
                 },
                 (error) => {
                   console.log("error al cargar " + error);

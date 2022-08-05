@@ -2,13 +2,16 @@ import { Procesador } from "../../enum/procesador.enum";
 import { Tipo } from "../../enum/tipo.enum";
 import { Status } from "../enums/status.enums";
 
-export class Teclado {
+export class Notebook {
 
     id!: number;
     usuario!: string;
     ubicacion!: string;
-    modelo!: string;
+    tipo!: string;
     bp!: string;
+    modelo!: string;
+    procesador!: Procesador;
     status!: Status;
-  }
+  
+}
   

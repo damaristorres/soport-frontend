@@ -3,6 +3,7 @@
       <p-toolbar styleClass="mb-4">
           <ng-template pTemplate="right">
             <div>
+            <h1 id="titulo">UPS</h1>
             <button id="nuevo" pButton pRipple label="Nuevo" icon="pi pi-plus" class="p-button-rounded p-button-primary" [routerLink]="['form']"></button>
             </div>
           </ng-template>
@@ -11,25 +12,16 @@
   
     <p-table #dt1 [value]="upses" [paginator]="true" [rows]="500"
       [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['upses.usuario','upses.area',
+      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['upses.usuario','upses.ubicacion',
       'upses.tipo','upses.bp', 'upses.status']" responsiveLayout="scroll"
       [rowHover]="true" dataKey="id">
-  
-      <!-- <ng-template pTemplate="caption">
-        <div class="p-d-flex">
-          <span class="p-input-icon-left p-ml-auto">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target, 'contains')" placeholder="Search..." />
-                </span>
-        </div>
-      </ng-template> -->
   
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
           <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>
           <th id="listado">Usuario</th>
-          <th id="listado">Area</th>
-          <th id="listado">Interno</th>
+          <th id="listado">Ubicación</th>
+          <th id="listado">Modelo</th>
           <th id="listado">BP</th>
           <th id="listado">Estado</th>
           <th id="listado">Opciones</th>
@@ -41,8 +33,8 @@
         <tr>
           <td id="listado">{{ upses.id }}</td>
           <td id="listado">{{ upses.usuario }}</td>
-          <td id="listado">{{ upses.area }}</td>
-          <td id="listado">{{ upses.interno }}</td>
+          <td id="listado">{{ upses.ubicacion }}</td>
+          <td id="listado">{{ upses.modelo }}</td>
           <td id="listado">{{ upses.bp }}</td>
           <td id="status">
             <div [ngStyle]="{'background-color':upses.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': upses.status === 'Activo' ? '#256029' : '#c63737'}">{{ upses.status }}</div>
