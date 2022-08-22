@@ -43,7 +43,7 @@
             <div class="btn">
               <button id="edit" pButton pRipple icon="pi pi-pencil" class="p-button-rounded mr-2 p-button-info" [routerLink]="['form', monitores.id]" ></button>
               <!-- <button pButton pRipple icon="pi pi-pencil" class="p-button-primary p-button-rounded mr-2 p-button-info" [routerLink]="['form', monitores.id]" ></button>  -->
-              <button id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(monitores.id)"></button>
+              <button *ngIf="monitores.status === 'Activo'" id="delete" pButton pRipple icon="pi pi-trash" class="p-button-rounded mr-2 p-button-danger" (click)="delete(monitores.id)"></button>
             </div>
           </td>
         </tr>

@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { Table } from 'primeng/table';
 import { environment } from 'src/environments/environment';
 import { Computadora } from '../computadora.model';
 import { ComputadoraService } from '../computadora.service';
@@ -15,6 +16,8 @@ export class ComputadoraListComponent implements OnInit {
   computadoras: Computadora[] = [];
 
   display: boolean = false;
+
+  @ViewChild('dt1') dt!: Table;
 
   private url = `${environment.URL_API}/computadora`;
 
@@ -58,6 +61,11 @@ export class ComputadoraListComponent implements OnInit {
       acceptLabel: "Confirmar",
       acceptButtonStyleClass: "p-button-danger p-mr-2"
     });
+  }
+
+  applyFilter($event: any, field: string, matchMode: string) {
+    let value = ($event.target as HTMLInputElement)?.value;
+    this.dt.filter(value, field, matchMode);
   }
 
 }
