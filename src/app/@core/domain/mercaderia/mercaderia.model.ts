@@ -1,5 +1,5 @@
 import { Condicional } from "../../enum/condicional.enum";
-import { Status } from "../../enum/status.enum";
+import { Status } from "../enums/status.enums";
 
 export class Mercaderia {
     cod_mercaderia!: number;
@@ -18,6 +18,6 @@ export class Mercaderia {
 
     constructor() {
         this.controla_lote_mercaderia = Condicional.NO;
-        this.status = Status.ACTIVO;
+        this.status = Status.ACTIVA;
     }
 }

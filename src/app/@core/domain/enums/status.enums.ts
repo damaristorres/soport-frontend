@@ -1,6 +1,7 @@
 export enum Status {
-  ACTIVA = 'Activo',
+  ACTIVA = "Activo",
   INACTIVA = 'Inactivo',
+  DEBAJA = 'De baja',
 }
 
 export function getAllEnumValues() {
@@ -14,6 +15,9 @@ export function getStatusDescription(value: Status) {
 
     case 'Inactivo':
       return 'Inactiva';
+
+    case 'De baja':
+      return 'De baja';
 
     default:
       return null;

@@ -19,7 +19,8 @@
     <ng-template pTemplate="header" class="align-items-center">
       <tr >
         <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>
-        <th id="listado">Usuario</th>
+        <th id="listado" [ngStyle]="{'color':'#61affe'}">Usuario actual</th>
+        <th id="listado" [ngStyle]="{'color':'#c63737'}">Usuario anterior</th>
         <th pSortableColumn="ubicacion" id="listado">Ubicación<p-sortIcon field="ubicacion"></p-sortIcon></th>
         <th id="listado">Interno</th>
         <th id="listado">BP</th>
@@ -33,11 +34,12 @@
       <tr>
         <td id="listado">{{ telefonos.id }}</td>
         <td id="listado">{{ telefonos.usuario }}</td>
+        <td id="listado">{{ telefonos.userOld }}</td>
         <td id="listado">{{ telefonos.ubicacion }}</td>
         <td id="listado">{{ telefonos.interno }}</td>
         <td id="listado">{{ telefonos.bp }}</td>
         <td id="status">
-          <div [ngStyle]="{'background-color':telefonos.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': telefonos.status === 'Activo' ? '#256029' : '#c63737'}">{{ telefonos.status }}</div>
+        <div [ngStyle]="{'background-color':telefonos.status === 'Activo' ? '#C8E6C9' : ('Inactivo' ? '#FFCDD2' : '#FEEDAF'), 'color': telefonos.status === 'Activo' ? '#256029' : ('Inactivo' ? '#c63737' : '#8a5340')}">{{ telefonos.status }}</div>
         </td>
         <td>
           <div class="btn">

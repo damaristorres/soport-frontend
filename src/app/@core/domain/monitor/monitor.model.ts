@@ -6,6 +6,7 @@ export class Monitor {
 
     id!: number;
     usuario!: string;
+    userOld!: string;
     ubicacion!: string;
     modelo!: string;
     bp!: string;

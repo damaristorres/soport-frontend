@@ -19,7 +19,9 @@
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
           <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>
-          <th id="listado">Usuario</th>
+
+          <th id="listado" [ngStyle]="{'color':'#61affe'}">Usuario actual</th>
+          <th id="listado" [ngStyle]="{'color':'#c63737'}">Usuario anterior</th>
           <th id="listado">Ubicacion</th>
           <th id="listado">BP</th>
           <th id="listado">Marca</th>
@@ -34,6 +36,7 @@
         <tr>
           <td id="listado">{{ notebookes.id }}</td>
           <td id="listado">{{ notebookes.usuario }}</td>
+          <td id="listado">{{ notebookes.userold }}</td>
           <td id="listado">{{ notebookes.ubicacion }}</td>
           <td id="listado">{{ notebookes.bp }}</td>
           <td id="listado">{{ notebookes.modelo }}</td>

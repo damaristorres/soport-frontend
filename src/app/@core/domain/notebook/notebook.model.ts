@@ -6,6 +6,7 @@ export class Notebook {
 
     id!: number;
     usuario!: string;
+    userOld!: string;
     ubicacion!: string;
     tipo!: string;
     bp!: string;
