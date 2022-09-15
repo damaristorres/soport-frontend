@@ -10,7 +10,7 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 [value]="upses" [paginator]="true" [rows]="500"
+    <p-table #dt1 [value]="upses" [paginator]="true" [rows]="10"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['upses.usuario','upses.ubicacion',
       'upses.tipo','upses.bp', 'upses.status']" responsiveLayout="scroll"

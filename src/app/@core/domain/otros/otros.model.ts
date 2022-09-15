@@ -1,12 +1,13 @@
 import { Status } from "../enums/status.enums";
 
-export class Telefono {
+export class Otros {
 
     id!: number;
     usuario!: string;
     userold!: string;
     ubicacion!: string;
-    interno!: string;
+    tipo!: string;
+    modelo!: string;
     bp!: string;
     status!: Status;
   }

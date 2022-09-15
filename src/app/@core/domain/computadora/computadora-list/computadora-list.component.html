@@ -10,7 +10,7 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 dataKey="id" [value]="computadoras" [paginator]="true" [rows]="500"
+    <p-table #dt1 dataKey="id" [value]="computadoras" [paginator]="true" [rows]="10"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['usuario','ubicacion',
       'bp', 'status']" responsiveLayout="scroll"
@@ -44,7 +44,7 @@
         <tr *ngIf="computadoras.bp != 'computadoras.bp'">
           <td id="listado">{{ computadoras.id }}</td>
           <td id="listado">{{ computadoras.usuario }}</td>
-          <td id="listado">{{ computadoras.userOld }}</td>
+          <td id="listado">{{ computadoras.userold }}</td>
           <td id="listado">{{ computadoras.ubicacion }}</td>
           <td id="listado">{{ computadoras.bp }}</td>
           <td id="listado">{{ computadoras.modelo }}</td>

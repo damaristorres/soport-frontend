@@ -36,7 +36,11 @@ export class MenubarItemsService {
       icon: 'pi pi-th-large',
       routerLink: ['teclado'],
     },
-
+    {
+      label: 'Otros',
+      icon: 'pi pi-globe',
+      routerLink: ['otros'],
+    },
 
   ];
 }

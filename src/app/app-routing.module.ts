@@ -52,6 +52,9 @@ const routes: Routes = [
   { path: 'teclado', loadChildren: async () =>
       (await import('./@core/domain/teclado/teclado.module')).TecladoModule, canActivate:[AuthGuard],
   },
+  { path: 'otros', loadChildren: async () =>
+  (await import('./@core/domain/otros/otros.module')).OtrosModule, canActivate:[AuthGuard],
+  },
 ];
 
 @NgModule({

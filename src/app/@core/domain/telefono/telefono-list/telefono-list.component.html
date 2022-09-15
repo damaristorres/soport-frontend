@@ -10,7 +10,7 @@
     </p-toolbar>
   </div>
 
-  <p-table #dt1 [value]="telefonos" [paginator]="true" [rows]="500"
+  <p-table #dt1 [value]="telefonos" [paginator]="true" [rows]="10"
     [showCurrentPageReport]="true"
     currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['telefonos.usuario','telefonos.ubicacion',
     'telefonos.tipo','telefonos.bp', 'telefonos.status']" responsiveLayout="scroll"
@@ -34,7 +34,7 @@
       <tr>
         <td id="listado">{{ telefonos.id }}</td>
         <td id="listado">{{ telefonos.usuario }}</td>
-        <td id="listado">{{ telefonos.userOld }}</td>
+        <td id="listado">{{ telefonos.userold }}</td>
         <td id="listado">{{ telefonos.ubicacion }}</td>
         <td id="listado">{{ telefonos.interno }}</td>
         <td id="listado">{{ telefonos.bp }}</td>

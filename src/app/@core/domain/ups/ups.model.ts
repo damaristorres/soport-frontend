@@ -6,7 +6,7 @@ export class Ups {
 
     id!: number;
     usuario!: string;
-    userOld!: string;
+    userold!: string;
     ubicacion!: string;
     modelo!: string;
     bp!: string;
