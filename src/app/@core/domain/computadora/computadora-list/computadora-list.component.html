@@ -10,7 +10,7 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 dataKey="id" [value]="computadoras" [paginator]="true" [rows]="10"
+    <p-table #dt1 dataKey="id" [value]="computadoras" [paginator]="true" [rows]="100"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['usuario','ubicacion',
       'bp', 'status']" responsiveLayout="scroll"

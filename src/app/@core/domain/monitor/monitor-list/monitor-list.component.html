@@ -10,7 +10,7 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 [value]="monitores" [paginator]="true" [rows]="10"
+    <p-table #dt1 [value]="monitores" [paginator]="true" [rows]="100"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['monitores.usuario','monitores.area',
       'monitores.tipo','monitores.bp', 'monitores.status']" responsiveLayout="scroll"

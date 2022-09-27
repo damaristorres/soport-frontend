@@ -41,6 +41,10 @@ export class OtrosListComponent implements OnInit {
       )
   }
 
+  getEventValue(event: any){
+    return (event.target as HTMLInputElement).value;
+  }
+
   delete(id: any) {
     this.confirmationService.confirm({
       message: 'Está seguro que desea eliminar?',

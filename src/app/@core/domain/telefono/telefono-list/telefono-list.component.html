@@ -10,7 +10,7 @@
     </p-toolbar>
   </div>
 
-  <p-table #dt1 [value]="telefonos" [paginator]="true" [rows]="10"
+  <p-table #dt1 [value]="telefonos" [paginator]="true" [rows]="100"
     [showCurrentPageReport]="true"
     currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['telefonos.usuario','telefonos.ubicacion',
     'telefonos.tipo','telefonos.bp', 'telefonos.status']" responsiveLayout="scroll"
