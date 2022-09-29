@@ -10,12 +10,20 @@
       </p-toolbar>
     </div>
   
-    <p-table #dt1 [value]="notebookes" [paginator]="true" [rows]="100"
-      [showCurrentPageReport]="true"
-      currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['notebookes.usuario','notebookes.area',
-      'notebookes.tipo','notebookes.bp', 'notebookes.status']" responsiveLayout="scroll"
-      [rowHover]="true" dataKey="id">
+    <p-table #dt dataKey="id" [value]="notebookes" [paginator]="true" [rows]="100"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['usuario', 'userold','ubicacion', 'modelo', 'procesador',
+    'bp', 'status']" responsiveLayout="scroll"
+    [rowHover]="true">
 
+    <ng-template pTemplate="caption">
+      <div class="p-d-flex p-ai-center p-jc-between">
+          <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input pInputText type="text" (input)="dt.filterGlobal(getEventValue($event), 'contains')" placeholder="Search..." />
+          </span>
+      </div>
+    </ng-template>
       <ng-template pTemplate="header" class="align-items-center">
         <tr >
           <th pSortableColumn="id" id="listado">ID<p-sortIcon field="id"></p-sortIcon></th>

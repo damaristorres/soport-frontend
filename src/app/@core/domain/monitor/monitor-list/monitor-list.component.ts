@@ -60,5 +60,9 @@ export class MonitorListComponent implements OnInit {
       acceptButtonStyleClass: "p-button-danger p-mr-2"
     });
   }
+  
+  getEventValue(event: any){
+    return (event.target as HTMLInputElement).value;
+  }
 
 }

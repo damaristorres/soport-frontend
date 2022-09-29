@@ -60,4 +60,8 @@ export class TelefonoListComponent implements OnInit {
     });
   }
 
+  getEventValue(event: any){
+    return (event.target as HTMLInputElement).value;
+  }
+
 }

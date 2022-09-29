@@ -68,4 +68,8 @@ export class ComputadoraListComponent implements OnInit {
     this.dt.filter(value, field, matchMode);
   }
 
+  getEventValue(event: any){
+    return (event.target as HTMLInputElement).value;
+  }
+
 }
