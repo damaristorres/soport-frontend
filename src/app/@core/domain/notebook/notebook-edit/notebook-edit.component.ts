@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
 import { getProcesadorDescription, Procesador } from 'src/app/@core/enum/procesador.enum';
+import { Responsabilidad, getResponsabilidadDescription } from 'src/app/@core/enum/responsabilidad.enum';
 import { getStatusDescription, Status } from '../../enums/status.enums';
 import { Notebook } from '../notebook.model';
 import { NotebookService } from '../notebook.service';
@@ -19,6 +20,7 @@ export class NotebookEditComponent implements OnInit {
 
   estados = Object.values(Status).map(value => ({ label: getStatusDescription(value), value: value}));
   procesador = Object.values(Procesador).map(value => ({ label: getProcesadorDescription(value), value: value}));
+  responsabilidades = Object.values(Responsabilidad).map(value => ({ label: getResponsabilidadDescription(value), value: value}));
 
   displayDialog: boolean = false;
 

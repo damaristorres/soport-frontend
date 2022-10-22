@@ -33,11 +33,11 @@
           <th id="listado">Modelo</th>
           <th id="listado">BP</th>
           <th id="listado">Estado</th>
+          <th id="listado">Responsabilidad</th>
           <th id="listado">Opciones</th>
         </tr>
       </ng-template>
     
-      
       <ng-template pTemplate="body" let-teclados>
         <tr>
           <td id="listado">{{ teclados.id }}</td>
@@ -48,6 +48,9 @@
           <td id="listado">{{ teclados.bp }}</td>
           <td id="status">
             <div [ngStyle]="{'background-color':teclados.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': teclados.status === 'Activo' ? '#256029' : '#c63737'}">{{ teclados.status }}</div>
+          </td>
+          <td id="listado">
+            <div [ngStyle]="{'background-color':teclados.responsabilidad === 'Confirmada' ? '#eccfff' : '#ffd8b2', 'color': teclados.responsabilidad === 'Confirmada' ? '#694382' : '#805b36'}">{{ teclados.responsabilidad }}</div>
           </td>
           <td>
             <div class="btn">

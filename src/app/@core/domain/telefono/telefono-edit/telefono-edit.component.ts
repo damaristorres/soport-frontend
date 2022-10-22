@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
+import { Responsabilidad, getResponsabilidadDescription } from 'src/app/@core/enum/responsabilidad.enum';
 import { getStatusDescription, Status } from '../../enums/status.enums';
 import { Telefono } from '../telefono.model';
 import { TelefonoService } from '../telefono.service';
@@ -12,12 +13,13 @@ import { TelefonoService } from '../telefono.service';
 })
 export class TelefonoEditComponent implements OnInit {
 
-  
   telefonos = new Telefono();
 
   isModoEdicion: boolean = false;
 
   estados = Object.values(Status).map(value => ({ label: getStatusDescription(value), value: value}));
+  responsabilidades = Object.values(Responsabilidad).map(value => ({ label: getResponsabilidadDescription(value), value: value}));
+
 
   displayDialog: boolean = false;
 

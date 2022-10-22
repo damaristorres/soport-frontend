@@ -34,6 +34,7 @@
         <th id="listado">Interno</th>
         <th id="listado">BP</th>
         <th id="listado">Estado</th>
+        <th id="listado">Responsabilidad</th>
         <th id="listado">Opciones</th>
       </tr>
     </ng-template>
@@ -49,6 +50,9 @@
         <td id="listado">{{ telefonos.bp }}</td>
         <td id="status">
         <div [ngStyle]="{'background-color':telefonos.status === 'Activo' ? '#C8E6C9' : ('Inactivo' ? '#FFCDD2' : '#FEEDAF'), 'color': telefonos.status === 'Activo' ? '#256029' : ('Inactivo' ? '#c63737' : '#8a5340')}">{{ telefonos.status }}</div>
+        </td>
+        <td id="listado">
+          <div [ngStyle]="{'background-color':telefonos.responsabilidad === 'Confirmada' ? '#eccfff' : '#ffd8b2', 'color': telefonos.responsabilidad === 'Confirmada' ? '#694382' : '#805b36'}">{{ telefonos.responsabilidad }}</div>
         </td>
         <td>
           <div class="btn">

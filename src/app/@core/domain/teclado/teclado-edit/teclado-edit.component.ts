@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConfirmationService } from 'primeng/api';
+import { Responsabilidad, getResponsabilidadDescription } from 'src/app/@core/enum/responsabilidad.enum';
 import { getStatusDescription, Status } from '../../enums/status.enums';
 import { Teclado } from '../teclado.model';
 import { TecladoService } from '../teclado.service';
@@ -17,6 +18,7 @@ export class TecladoEditComponent implements OnInit {
   isModoEdicion: boolean = false;
 
   estados = Object.values(Status).map(value => ({ label: getStatusDescription(value), value: value}));
+  responsabilidades = Object.values(Responsabilidad).map(value => ({ label: getResponsabilidadDescription(value), value: value}));
 
   displayDialog: boolean = false;
 

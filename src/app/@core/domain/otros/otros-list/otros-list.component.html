@@ -35,6 +35,7 @@
           <th id="listado">Modelo</th>
           <th id="listado">BP</th>
           <th id="listado">Estado</th>
+          <th id="listado">Responsabilidad</th>
           <th id="listado">Opciones</th>
         </tr>
       </ng-template>
@@ -51,6 +52,9 @@
           <td id="listado">{{ otroses.bp }}</td>
           <td id="status">
             <div [ngStyle]="{'background-color':otroses.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': otroses.status === 'Activo' ? '#256029' : '#c63737'}">{{ otroses.status }}</div>
+          </td>
+          <td id="listado">
+            <div [ngStyle]="{'background-color':otroses.responsabilidad === 'Confirmada' ? '#eccfff' : '#ffd8b2', 'color': otroses.responsabilidad === 'Confirmada' ? '#694382' : '#805b36'}">{{ otroses.responsabilidad }}</div>
           </td>
           <td>
             <div class="btn">

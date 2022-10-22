@@ -35,6 +35,7 @@
           <th id="listado">Marca</th>
           <th id="listado">Procesador</th>
           <th id="listado">Estado</th>
+          <th id="listado">Responsabilidad</th>
           <th id="listado">Opciones</th>
         </tr>
       </ng-template>
@@ -51,6 +52,9 @@
           <td id="listado">{{ notebookes.procesador }}</td>
           <td  id="status">
             <div [ngStyle]="{'background-color':notebookes.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': notebookes.status === 'Activo' ? '#256029' : '#c63737'}">{{ notebookes.status }}</div>
+          </td>
+          <td id="listado">
+            <div [ngStyle]="{'background-color':notebookes.responsabilidad === 'Confirmada' ? '#eccfff' : '#ffd8b2', 'color': notebookes.responsabilidad === 'Confirmada' ? '#694382' : '#805b36'}">{{ notebookes.responsabilidad }}</div>
           </td>
           <td>
             <div class="btn">

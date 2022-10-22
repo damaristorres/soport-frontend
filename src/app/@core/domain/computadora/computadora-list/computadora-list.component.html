@@ -13,7 +13,7 @@
     <p-table #dt dataKey="id" [value]="computadoras" [paginator]="true" [rows]="100"
       [showCurrentPageReport]="true"
       currentPageReportTemplate="{first} - {last} de {totalRecords}" [globalFilterFields]="['usuario', 'userold','ubicacion', 'procesador',
-      'bp', 'status']" responsiveLayout="scroll"
+      'bp', 'status', 'responsabilidad']" responsiveLayout="scroll"
       [rowHover]="true">
 
       <ng-template pTemplate="caption">
@@ -35,6 +35,7 @@
           <th id="listado">Marca</th>
           <th id="listado">Procesador</th>
           <th id="listado">Estado</th>
+          <th id="listado">Responsabilidad</th>
           <th id="listado">Opciones</th>
         </tr>
       </ng-template>
@@ -50,6 +51,9 @@
           <td id="listado">{{ computadoras.procesador }}</td>
           <td id="listado">
             <div [ngStyle]="{'background-color':computadoras.status === 'Activo' ? '#C8E6C9' : '#FFCDD2', 'color': computadoras.status === 'Activo' ? '#256029' : '#c63737'}">{{ computadoras.status }}</div>
+          </td>
+          <td id="listado">
+            <div [ngStyle]="{'background-color':computadoras.responsabilidad === 'Confirmada' ? '#eccfff' : '#ffd8b2', 'color': computadoras.responsabilidad === 'Confirmada' ? '#694382' : '#805b36'}">{{ computadoras.responsabilidad }}</div>
           </td>
           <td >
             <div class="btn" >

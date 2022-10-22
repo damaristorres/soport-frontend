@@ -48,6 +48,12 @@
                 </span>
             </div>
 
+            <div class="p-field">
+                <span>
+                    <label>Responsabilidad:</label>
+                    <p-dropdown [options]="responsabilidades" [(ngModel)]="upses.responsabilidad" placeholder="Seleccione" optionValue="value" optionLabel="label"></p-dropdown>
+                </span>
+            </div>
 
             <div class="p-field" style="margin-top: 10px;">
                 <button pButton pRipple type="button" (click)="isModoEdicion ? update() : add()" styleClass="p-button-success p-mr-2 p-mb-2" id="guardar" label="Guardar" ></button>

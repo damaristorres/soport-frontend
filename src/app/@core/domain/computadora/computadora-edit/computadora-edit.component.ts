@@ -8,8 +8,7 @@ import { ComputadoraService } from '../computadora.service';
 import { Computadora } from '../computadora.model';
 import { getStatusDescription, Status } from '../../enums/status.enums';
 import { getProcesadorDescription, Procesador } from 'src/app/@core/enum/procesador.enum';
-import { getTipoDescription, Tipo } from 'src/app/@core/enum/tipo.enum';
-
+import { getResponsabilidadDescription, Responsabilidad } from 'src/app/@core/enum/responsabilidad.enum';
 
 @Component({
   selector: 'app-computadora-edit',
@@ -24,6 +23,7 @@ export class ComputadoraEditComponent implements OnInit {
 
   estados = Object.values(Status).map(value => ({ label: getStatusDescription(value), value: value}));
   procesador = Object.values(Procesador).map(value => ({ label: getProcesadorDescription(value), value: value}));
+  responsabilidades = Object.values(Responsabilidad).map(value => ({ label: getResponsabilidadDescription(value), value: value}));
 
   displayDialog: boolean = false;
 

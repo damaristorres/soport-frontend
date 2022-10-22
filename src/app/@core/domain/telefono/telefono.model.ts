@@ -1,3 +1,4 @@
+import { Responsabilidad } from "../../enum/responsabilidad.enum";
 import { Status } from "../enums/status.enums";
 
 export class Telefono {
@@ -9,5 +10,7 @@ export class Telefono {
     interno!: string;
     bp!: string;
     status!: Status;
+    responsabilidad!: Responsabilidad;
+
   }
   
